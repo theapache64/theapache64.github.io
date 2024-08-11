@@ -11,6 +11,7 @@ description:
 tags:
   - reverse-engineering
   - cars
+  - react native
 ---
 > Disclaimer: The information provided is intended for educational purposes only. It should not be considered as professional advice or used for any commercial purposes. Users are encouraged to conduct their own research and consult with relevant experts before making any decisions based on the content provided.
 
@@ -18,13 +19,13 @@ tags:
 
 August 5th, 2023, a lazy Saturday. There I was, casually swiping through YouTube shorts...
 
-<iframe src="https://giphy.com/embed/f8ywYgttpGzzVPH5AO" width="380" height="380" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/f8ywYgttpGzzVPH5AO" width="380" height="380" style="" frameBorder="0" class="giphy-embed" loading="lazy" allowFullScreen ></iframe>
 
 and came across a video
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/911768099?h=b7d1973da3" width="640" height="360" frameborder="0"  allowfullscreen></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/911768099?h=b7d1973da3" width="640" height="360" frameborder="0" loading="lazy" allowfullscreen ></iframe>
 
-## Research and Purchase: From Google to Amazon 
+## Research and Purchase
 
 As an economical car owner, this intrigued me, and I was keen to make the purchase. So, I Googled “Wrumer Sound Buy” and found the website
 
@@ -42,15 +43,15 @@ I jumped onto Amazon.in and searched for “OBD2 reader,” and voila!
 
 Yes, it only cost ₹411, which is roughly $4.95. That’s like ~87% cheaper! Without a second thought, I placed the order and received it within three days.
 
-## Installation Woes: The Excitement and Disappointment
+##  The Excitement and Disappointment
 
-![image](https://github.com/user-attachments/assets/5c7271b6-078f-4499-9a1a-e9011f3fbf66)
+![cheap OBD2 device](https://github.com/user-attachments/assets/5b77fa58-3949-4dbc-8e54-a6a70bb040f7)
 
 Excitedly, I installed the app on my phone and dashed to my car with the newly acquired, budget-friendly OBD2 reader in hand. I found the OBD2 port, connected the device, and saw a LED light blinking. Excitedly, I opened the app and pressed the “CONNECT” button, but it didn’t connect. 😔
 
-![image](https://github.com/user-attachments/assets/77889bde-a500-4b08-a19a-7aaffe2549f8)
+![wrumer screenshot](https://github.com/user-attachments/assets/5d3f54e2-8ff8-4014-a4b5-ad71f8fc6829)
 
-## Code Investigation: Unraveling the React Native App
+## Unraveling the React Native App
 
 I returned to my desk, pondering, “Why didn’t it work? 🤔 There must be something going on inside the app. 🤨” Turning to my trusted ally, [Stackzy](https://github.com/theapache64/stackzy), I delved into its depths to uncover the mystery, and bam!.
 
@@ -60,8 +61,9 @@ Yep, the lazy me skipped out on implementing React Native support, and now it’
 
 I clicked on the top right `<>` button to see the code
 
-## Modification Attempt: Modifying the App
-![image](https://github.com/user-attachments/assets/9b359a80-c5a3-44c6-96c0-2f6ba415bd15)
+## Modification Attempt
+
+![jadx-gui screenshot](https://github.com/user-attachments/assets/eead5e0d-686b-4cff-8397-5cc7195f0ecb)
 
 The red part is something I don’t have to focus on. Since this is a React Native app, the “Resources” directory holds most of the interesting stuff.
 
@@ -73,7 +75,7 @@ Then, there it was, the infamous index.android.bundle, housing the brain of the 
 
 With approximately 50k lines, going through them line by line was out of the question. So, I opted to use the search function, looking for the title of the connect button, which was “Click to Connect.”
 
-![image](https://github.com/user-attachments/assets/b3225dfb-bc51-4414-87e2-1bac4fa8d600)
+![click to connect screenshot](https://github.com/user-attachments/assets/5a440487-55f2-4ae2-9074-d78feb8abe8e)
 
 ![image](https://github.com/user-attachments/assets/15c81c23-30d0-493c-a53e-f0780205f059)
 
@@ -127,7 +129,7 @@ Got it! Now it’s time to edit the APK. While I could repackage it manually, th
 
 First, I replaced the original bundle file with the modified one.
 
-![image](https://github.com/user-attachments/assets/c2cd707b-adb6-4bab-82f4-bc1bd97142d3)
+![ok](https://github.com/user-attachments/assets/8ed814a9-0866-4a6d-8196-75e157df75b2)
 
 
 Next, I changed the title to “Wrumer Mod” to make it easier to distinguish from the original app. Then, I uninstalled the original version from my phone and pressed the “Install” button (see below).
@@ -139,7 +141,7 @@ Next, I changed the title to “Wrumer Mod” to make it easier to distinguish f
 and its done Done ✅
 
 
-## Crash Landing: Learning from Mistakes
+## Learning from Mistakes
 
 I opened the app, expecting greatness, but all I got was a crash landing. Looks like my coding escapades took a nosedive!
 
@@ -148,7 +150,7 @@ I opened the app, expecting greatness, but all I got was a crash landing. Looks 
 
 Ah, this crash is all too familiar to me from work! 😄 It’s like when you’re missing a puzzle piece — in this case, the split APKs. I only installed the main APK, forgetting about its companions. Time for a reinstallation from the PlayStore to grab both the main and split APKs.
 
-## Split APK Revelation: Navigating Through Logcat
+## Split APKs
 
 Now comes the million-dollar question: where’s this split APK located? Well, there’s a neat little trick for that. Just open the app and check out Logcat.
 
@@ -175,7 +177,7 @@ This copies the split APK to the computer and all we need to do is sign with the
 ![image](https://github.com/user-attachments/assets/fb6b8fec-160c-4de9-a42e-85941e9e6d7e)
 
 
-## Successful Installation: Victory Lap
+## Successful Installation
 
 Now that we have a signed main APK and a signed split APK, it’s time to install them together. To do this, I used theadb install-multiple command.
 
@@ -191,7 +193,7 @@ Excited me dashed to the car this time! And let me tell you, it was pure magic. 
 
 ![image](https://github.com/user-attachments/assets/d648952b-d4ba-4355-9f28-29ba937a8816)
 
-## Conclusion: Another Tech Triumph
+## Conclusion
 
 With the app finally sorted out, I couldn’t wait to give it a spin. Excitedly, I hopped into my car, fired up the engine, and tapped on the screen. And you know what? It worked like a charm! The revs kicked in, synced perfectly with my ride. It was one of those moments where you just sit back and go, “Yep, that’s how it’s done.” So, off I went, cruising down the road with a big grin on my face. Another day, another tech victory 😜
 

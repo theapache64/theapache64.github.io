@@ -4,6 +4,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
+import Comments from "@components/Comments";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
@@ -94,6 +95,9 @@ const layoutProps = {
 
       <ShareLinks />
     </div>
+
+    <Comments client:only />
+    </script>
   </main>
   <Footer />
 </Layout>

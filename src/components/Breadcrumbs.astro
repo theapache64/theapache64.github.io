@@ -35,7 +35,7 @@ breadcrumbList[0] === "tags" &&
         index + 1 === breadcrumbList.length ? (
           <li>
             <span
-              class="lowercase"
+              class={`${index > 0 ? "lowercase" : "capitalize"}`}
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
@@ -61,7 +61,7 @@ breadcrumbList[0] === "tags" &&
     @apply inline;
   }
   .breadcrumb ul li a {
-    @apply opacity-70;
+    @apply capitalize opacity-70;
   }
   .breadcrumb ul li span {
     @apply opacity-70;

@@ -42,14 +42,15 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        hi internet! 
+        Hi fellow developer, welcome to my blog. 
+        Here you can find my thoughts, ideas, and code snippets. Enjoy your stay!
       </p>
       
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">social links:</div>
+            <div class="social-links">Social Links:</div>
             <Socials />
           </div>
         )
@@ -62,7 +63,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>featured</h2>
+            <h2>Featured</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
@@ -81,7 +82,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>recent posts</h2>
+          <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>

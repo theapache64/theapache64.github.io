@@ -17,25 +17,21 @@ tags:
 
 ## Introduction: A Lazy Saturday Discovery
 
-August 5th, 2023, a lazy Saturday. There I was, casually swiping through YouTube shorts...
-
-<iframe src="https://giphy.com/embed/f8ywYgttpGzzVPH5AO" width="380" height="380" style="" frameBorder="0" class="giphy-embed" loading="lazy" allowFullScreen ></iframe>
-
-and came across a video
+August 5th, 2023, a lazy saturday, I was casually swiping through YouTube Shorts and I came across this video...
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/911768099?h=b7d1973da3" width="640" height="360" frameborder="0" loading="lazy" allowfullscreen ></iframe>
 
 ## Research and Purchase
 
-As an economical car owner, this intrigued me, and I was keen to make the purchase. So, I Googled “Wrumer Sound Buy” and found the website
+This intrigued me, and I was keen to make the purchase. So, I Googled “Wrumer Sound Buy” and found the website
 
 ![wrumer home page](assets/images/wrumer_home_page.png)
 
-It costs around $40, but before making the purchase, I wanted to grasp how it actually operates. Upon opening the “How it works” section, here’s what I found:
+It costs around $40, but before making the purchase, I wanted to understand how it actually works. Upon opening the “How it works” section, here’s what I found:
 
 ![wrumer website explains about compatibility](https://github.com/user-attachments/assets/9879391f-1a0c-4460-bf33-2d6aaa6bcff1)
 
-I came to understand that it utilizes something called an “OBD2” reader, which sends the RPM value to the app. Based on this data, the app plays the corresponding rev sound. However, it was the last section, “Also works with other similar apps,” that really grabbed my attention. I couldn’t help but think, “If this OBD2 hardware is compatible with other apps, then perhaps other OBD2 readers might also be compatible with this app.”
+It looked like that it utilizes something called an “OBD2” reader, which sends the RPM value to the app. Based on this data, the app plays the corresponding rev sound. However, it was the last section, “Also works with other similar apps,” that really grabbed my attention. I couldn’t help but think, “If this OBD2 hardware is compatible with other apps, then perhaps other OBD2 readers might also be compatible with this app.”
 
 I jumped onto Amazon.in and searched for “OBD2 reader,” and voila!
 

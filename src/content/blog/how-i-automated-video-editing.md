@@ -7,7 +7,7 @@ slug: how-i-automated-video-editing
 featured: true
 draft: false
 description: 
-    how i automated video editing using ffmpeg
+     frustrated by the time-consuming process of video editing, decided to automate the task using programming and tools like ffmpeg.
 tags:
   - productivity
   - ffmpeg

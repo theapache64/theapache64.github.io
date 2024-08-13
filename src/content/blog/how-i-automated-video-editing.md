@@ -87,19 +87,19 @@ Now, let's run it! 🏃
 
 Input is a 6 minutes video from [Comma Archive](https://www.youtube.com/channel/ucwgkmjm4zjqrj-u5njvr2dg), captured by [George Hotz](https://en.wikipedia.org/wiki/george_hotz) in a recent hackathon they conducted.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0l_zU7XjWXo?si=vUWE35BT4-_9-m71" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/0l_zU7XjWXo?si=vUWE35BT4-_9-m71" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
 
 ## 🚀 Execution 
 
 It only took ~1 minute to edit and render the output, whereas a manual edit would have taken hours, perhaps even days, to accomplish it. 🤷
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N0rORfltywU?si=yYnIhg8hC6-sgPdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/N0rORfltywU?si=yYnIhg8hC6-sgPdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
 
 ## 📺 Output 
 
 The output, reduced to 4 minutes 43 seconds, is here. It includes 7 time-lapses of different lengths.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/t_vo1SYnMsg?si=hEa5kL0A-TYT1TY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/t_vo1SYnMsg?si=hEa5kL0A-TYT1TY-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
  
 I know the output is not as enjoyable as a manually edited one, but I believe I can improve this in due time 😇
 

@@ -19,7 +19,7 @@ tags:
 
 August 5th, 2023, a lazy saturday, I was casually swiping through YouTube Shorts and I came across this video...
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/911768099?h=b7d1973da3" width="640" height="360" frameborder="0" loading="lazy" allowfullscreen ></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/911768099?h=b7d1973da3" frameborder="0" loading="lazy" allowfullscreen ></iframe>
 
 ## Research and Purchase
 

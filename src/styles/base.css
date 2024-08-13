@@ -102,6 +102,11 @@
     word-wrap: break-word;
   }
 
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
   pre > code {
     white-space: pre;
   }

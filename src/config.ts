@@ -7,7 +7,7 @@ export const SITE: Site = {
   profile: "https://github.com/theapache64",
   desc: "Story of my stupid tools and libraries",
   title: "theapache64",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og.png",
   lightAndDarkMode: true,
   postPerIndex: 3,
   postPerPage: 10,

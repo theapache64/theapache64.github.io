@@ -1,13 +1,13 @@
 ---
 author: theapache64
 pubDatetime: 2024-02-10T00:00:00+05:30
-modDatetime: 2024-08-12T00:00:00+05:30
-title: How Reverse Engineering Saved Me ₹4000 on Car Mods!
-slug: how-reverse-engineering-saved-me-4000-on-car-mods
+modDatetime: 2024-08-26T00:00:00+05:30
+title: How Reverse Engineering Saved Me ~87% Cost on Car Mods!
+slug: how-reverse-engineering-saved-me-87-percent-on-car-mods
 featured: true
 draft: false
 description: 
-  How I saved ₹4000 on car mods by reverse engineering a React Native app and modifying it to work with a cheaper OBD2 reader.
+  How I saved ~87% on car mods by reverse engineering a React Native app and modifying it to work with a cheaper OBD2 reader.
 tags:
   - reverse-engineering
   - cars
@@ -195,3 +195,6 @@ With the app finally sorted out, I couldn’t wait to give it a spin. Excitedly,
 
 ## Hardware Performance: Budget vs. Original
 The cheap OBD2 reader saved costs, but it came with a slight delay sometimes. Opting for authentic hardware may provide better results. While the cheaper option worked fine for me, users who prioritize performance might benefit from investing in the original [Wrumer](https://us.wrumersound.com/) hardware for a smoother experience, although I haven’t tried it myself.
+
+## I know what you’re thinking now
+I know, I know — the time I spent probably cost more than what I saved. But hey, sometimes, the fun of figuring things out is priceless! IYKYK

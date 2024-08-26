@@ -18,6 +18,20 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- Google tag (gtag.js) -->
+      <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-RVMGGB9DLQ"></script>
+      <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RVMGGB9DLQ');
+      </script>
+  </head>
+</html> 
 
 <Layout>
   <Header />

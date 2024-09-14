@@ -12,4 +12,4 @@ tags:
   - productivity
 ---
 
-late november 2023, just like everyone 
+Late 

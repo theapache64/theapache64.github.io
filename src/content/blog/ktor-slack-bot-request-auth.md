@@ -1,14 +1,14 @@
 ---
 author: theapache64
 pubDatetime: 2024-09-14T00:00:00+05:30
-modDatetime: 2024-09-14T00:00:00+05:30
+modDatetime: 2024-09-14T18:25:00+05:30
 title: How to protect your Ktor Slack bot
 slug: 
     how-to-protect-your-ktor-slack-bot
 featured: true
 draft: false
 description: 
-    A how-to guide on how to protect HTTP-based Ktor Slack bot (HMAC)
+    A how-to guide on how to protect HTTP-based Ktor Slack bot (using HMAC)
 tags:
     - ktor
     - slack-bot
@@ -16,9 +16,9 @@ tags:
 ---
 
 ## Problem Statement
-While writing the backend for an HTTP-based Slack bot, you might want to verify that the request comes from Slack and not from somebody trying to spam your service. To do this, we can use the `X-Slack-Signature` header that comes with the POST request, using the Ktor authentication plugin.
+While writing a backend for an HTTP-based Slack bot, you might want to verify that the request comes from Slack and not from somebody trying to spam your service. To do this, we can use the `X-Slack-Signature` header that comes with the POST request  with the Ktor authentication plugin. Let's see how we can do that
 
-- Versions we are using
+- Versions we'll be using in this guide
 
 ```kotlin
 kotlin("jvm") version "2.0.20"
@@ -29,14 +29,14 @@ id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
 ## Step 1 : Add auth module
 
 
-- first add these deps to your build.gradle.kts
+- first add these dependencies to your `build.gradle.kts`
 
 ```kotlin
 implementation("io.ktor:ktor-server-auth") // auth plugin
 implementation("io.ktor:ktor-server-double-receive") // to read request body multipe times
 ```
 
-- add custom auth class
+- then add the custom auth class
 
 ```kotlin
 import io.ktor.http.*
@@ -146,7 +146,7 @@ fun Application.configureAuth() {
 }
 ```
 
-- install `DoubleReceive` plugin
+- install both the plugins
 
 ```kotlin
 fun Application.module() {
@@ -158,7 +158,7 @@ fun Application.module() {
 
 ## Step 3: Wrap your route with the auth module
 
-```
+```kotlin
 fun Application.configureRouting() {
     routing {
         authenticate("slack-request-auth") {
@@ -169,7 +169,7 @@ fun Application.configureRouting() {
     }
 }
 ```
-and thats it
+and thats it 🤷‍♂️
 
 ### Credits
 

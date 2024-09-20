@@ -158,10 +158,10 @@ The class surprisingly doesn't have a case checking for `0` and `14`, hence it w
 
 Looks like the `Int` that was passed will be used to define the behavior of the call to each method. Wow, now I know why they call it an "aggressive" optimization.
 
-## 📖 Learnings
+## 📖 Major Learnings
 
 When `fullMode` is enabled, 
-- Don't play with reflection APIs and rely or don't play with class name and structures (eg: `MyClass::java.class.simpleName` won't neccesarly print `MyClass`)
+- Don't play with reflection APIs or don't play with class name and structures (eg: `MyClass::java.class.simpleName` won't neccesarly print `MyClass`)
 - Use proguard rules if there's a class depends on reflection. (eg: Gson models)
 
 ## 🤝 Thanks

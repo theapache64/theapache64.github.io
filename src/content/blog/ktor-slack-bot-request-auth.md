@@ -5,7 +5,7 @@ modDatetime: 2024-09-14T18:25:00+05:30
 title: How to protect your Ktor Slack bot
 slug: 
     how-to-protect-your-ktor-slack-bot
-featured: true
+featured: false
 draft: false
 description: 
     A how-to guide on how to protect HTTP-based Ktor Slack bot (using HMAC)

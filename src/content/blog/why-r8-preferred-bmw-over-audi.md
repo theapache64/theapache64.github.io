@@ -166,4 +166,4 @@ When `fullMode` is enabled,
 
 ## 🤝 Thanks
 
-Thanks for reading! If you'd like me to dive deeper into the topic or continue with a part two, let me know in the comments. I'm not a regular blogger, but if you found this post helpful or interesting, I'd love your feedback. And if it didn’t hit the mark, feel free to share that too! :)
+Thanks for reading! If you'd like me to dive deeper into the topic or continue with a part two, let me know. I'm not a regular blogger, so if you found this post helpful or interesting or it didn’t hit the mark, I'd love your feedback for that as well  in the comments 👇 

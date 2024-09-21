@@ -35,13 +35,13 @@ A little bit of context if you're hearing `fullMode` or `r8` for the first time.
 
 **What's r8?**
 
-R8 is a tool in Android Studio that shrinks, optimizes, and secures Android applications and libraries: 
+R8 is a tool that shrinks, optimizes, and secures Android applications and libraries: 
 Shrinking: R8 removes unused classes, members, and resources to reduce the size of your app. 
 Optimizing: R8 rewrites code to improve performance. 
 
 **What's fullMode?**
 
-fullMode, also known as non-compat mode, is a feature in Android that allows R8 to perform more aggressive optimizations. This can help reduce the size of an app's APK and improve its performance
+fullMode, also known as non-compat mode, is a feature in Android that allows R8 to perform more aggressive optimizations. This can help reduce the size of an app's APK and improve its performance. fullMode is enabled by default from AGP 8 onwards
 
 > <i>Source: Google</i>
 

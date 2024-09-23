@@ -19,7 +19,7 @@ tags:
 
 ## 🙏 Disclaimer
 
-Am starting to write this blog with a curious mind to understand why Gson started crashing after `fullMode` is enabled in a working `release` build. I can guess it could be because of Gson's reflection usage and somehow `fullMode` removed something, but let's understand what's the exact reason. This analysis is not about <i>"adding an extra rule should fix it"</i>. Its more about "</i>how an app which is running fine with `fullMode = false` breaks when `fullMode` set to `true`</i> 
+Am starting to write this blog with a curious mind to understand why Gson started crashing after `fullMode` is enabled in a working `release` build. I can guess it could be because of Gson's reflection usage and somehow `fullMode` modified or removed something, but let's understand what's the exact change. This analysis is not about <i>"adding an extra rule should fix it"</i>. Its more about "</i>how an app which is running fine with `fullMode = false` breaks when `fullMode` set to `true`</i> 
 
 ## 📗 Context
 A little bit of context if you're hearing `fullMode` or `r8` for the first time. 

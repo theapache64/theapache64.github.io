@@ -90,6 +90,8 @@ and my proguard rules have rules mentioned in the Gson example [here](https://gi
 
 ## 🎭 Behaviour
 
+Alrighty, let's go!
+
 As you can see in the `MainActivity`, we're parsing the `JSON` using `Gson#fromJson` and setting the `toString()` value of `data class` to a `TextView` (yeah, XML :P). Simple. 
 
 The `release` build with `fullMode = false` works fine

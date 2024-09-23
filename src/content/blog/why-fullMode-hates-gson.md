@@ -116,11 +116,11 @@ Process: com.example.app, PID: 27357
 ```
 
 
-The above stacktrace says the crash happened due to a `ClassCastException` but that usually happens when you try to cast to a wrong class. Here, we have only one model class, and that too parsed with `Car::class.java`. Its not even dynamic or generic
+The above stacktrace says the crash happened due to a `ClassCastException` but that usually happens when you try to cast to a wrong class. Here, we have only one model class, and that too parsed with `Car::class.java`. Its not even "dynamic or generic"
 
 ## 👬 Compare
 
-To clearly understand what exactly happened, we need to compare the two APKs: one with fullMode and one without fullMode. Luckily, I have a tiny tool created, called [dex-diff](https://github.com/theapache64/dex-diff) to do just that (this is not a promotion... I'd use another tool if there's a better one out there... oops, did I promote the tool again 🙊).
+To clearly understand what exactly happened, we need to compare the two APKs: one with fullMode and one without fullMode. Luckily, I have a tiny tool created, called [dex-diff](https://github.com/theapache64/dex-diff) to do just that (this is not a promotion... I'd use another tool if there's a better one out there... oops, did I promote the tool again 🙊??).
 
 Anyway, moving on, I've `dex-diff` already installed and also both APKs generated
 
@@ -146,7 +146,7 @@ After executing the command `dex-diff` will start decompile and diff for each cl
 ✅ Report ready (7.98s) -> report.html
 ```
 
-Let's look at the report file
+Cool. The report is ready. Let's look at it
 
 ## 📜 Report 
 
@@ -160,13 +160,15 @@ As you can see in the "Removed app files" section, our `Car` class got completel
 
 So many interesting things happened in there, but there have been three major changes related to the crash where we're focusing at the moment.
 
-1. The `Car.class` is now `SqlTypesSupport.AnonymousClass1.class`
-2. Previously used `.read(jsonReader)` became `.mo0read(jsonReader)`
-3. There's no `TextView` and `TextView#setText` call in `MainActivity` and the area has been replaced with `JsonToken$EnumUnboxingLocalUtility.m(cls.cast(obj));`. 
+1. The `Car.class` is now `SqlTypesSupport.AnonymousClass1.class` 😮
+2. Previously used `.read(jsonReader)` became `.mo0read(jsonReader)` 🤔
+3. There's no `TextView` and `TextView#setText` call in `MainActivity` and the area has been replaced with `JsonToken$EnumUnboxingLocalUtility.m(cls.cast(obj));` 😕
 
-Wait, is that the crash point for our crash.. `JsonToken$EnumUnboxingLocalUtility` 🤔.. yeah it is. So that means, failed at `2` and it went to the `catch` block and crashed at spot `3`. 
+Wait, is that the crash point for our crash.. `JsonToken$EnumUnboxingLocalUtility` 🤔.. yeah it is 🫠. So that means, failed at `2` and it went to the `catch` block and crashed at spot `3`. 
 
-btw, what's inside `SqlTypesSupport.AnonymousClass1.class`? 
+## 📦 What's inside?
+
+Let's see what's inside `SqlTypesSupport.AnonymousClass1.class`? 
 
 (To browse the decompiled code better, I'll be using `jadx`)
 

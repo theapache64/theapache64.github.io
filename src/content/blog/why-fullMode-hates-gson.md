@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2024-09-21T00:00:00+05:30
-modDatetime: 2024-09-21T00:00:00+05:30
+pubDatetime: 2024-09-24T00:00:00+05:30
+modDatetime: 2024-09-24T00:00:00+05:30
 title: Why fullMode hates Gson so much?
 slug: 
     why-fullMode-hates-gson-so-much
@@ -18,8 +18,6 @@ tags:
 ![alt text](image-15.png)
 
 ## 🙏 Disclaimer
-
-<img src="image-19.png" width="500">
 
 Am starting to write this blog with a curious mind to understand why Gson started crashing after `fullMode` is enabled in a working `release` build. I can guess it could be because of Gson's reflection usage and somehow `fullMode` removed something, but let's understand what's the exact reason. This analysis is not about <i>"adding an extra rule should fix it"</i>. Its more about "</i>how an app which is running fine with `fullMode = false` breaks when `fullMode` set to `true`</i> 
 
@@ -96,7 +94,7 @@ As you can see in the `MainActivity`, we're parsing the `JSON` using `Gson#fromJ
 
 The `release` build with `fullMode = false` works fine
 
-<img src="image-11.png" width="300">
+![](assets/images/image-11.png)
 
 
 but, the app crashes when i run the `release` build with `fullMode = true`. 

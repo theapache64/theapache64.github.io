@@ -15,7 +15,7 @@ tags:
     - gson
 ---
 
-![alt text](image-15.png)
+![Guy smoking while two people fight meme themed to fullMode and Gson](image-15.png)
 
 ## 🙏 Disclaimer
 
@@ -124,7 +124,7 @@ To clearly understand what exactly happened, we need to compare the two APKs: on
 
 Anyway, moving on, I've `dex-diff` already installed and also both APKs generated
 
-![alt text](image-12.png)
+![screenshot of APK files](image-12.png)
 
 Now I need to pass these two APKs to `dex-diff` and ask it to generate the diff. To do that, i need to execute this command
 
@@ -150,13 +150,13 @@ Cool. The report is ready. Let's look at it
 
 ## 📜 Report 
 
-![alt text](image-13.png)
+![report file screenshot](image-13.png)
 
 As you can see in the "Removed app files" section, our `Car` class got completely removed, and it looks like `MainActivity.java` has had `64` lines removed and `12` lines added. Let's see what happened there...
 
 ## 🤷‍♂️ Analysis : How it crashed?
 
-![alt text](image-14.png)
+![screenshot of major changes](image-14.png)
 
 So many interesting things happened in there, but there have been three major changes related to the crash where we're focusing at the moment.
 
@@ -172,22 +172,22 @@ Let's see what's inside `SqlTypesSupport.AnonymousClass1.class`?
 
 (To browse the decompiled code better, I'll be using `jadx`)
 
-![alt text](image-16.png)
+![screenshot of AnonymousClass1 content](image-16.png)
 
 Wow! Its an empty class! and what's inside `JsonToken$EnumUnboxingLocalUtility` 
 
-![alt text](image-17.png)
+![screesnshot fo EnumUnboxingLocalUtility](image-17.png)
 
 Alright. Now the crash makes sense. I'll tell you how it crashed.
 
 1. At block 1, `cls` gets assigned to an empty class.
 2. At block 2, the empty class tries to get converted to an object (parsing). It fails, and the `EOFException` gets thrown from the Gson library.
 
-![alt text](image-18.png)
+![screenshot of EOFException usage](image-18.png)
 
 3. Because the parsing failed, the `obj` stays `null` and `cls.cast(obj)` throws `ClassCastException`. Because it was casting to `null`,  and that's why stack trace does not indicate which cast "to" failed. And this exception caused the app to crash.
 
-![alt text](image-9.png)
+![jadx screenshot of cast call](image-9.png)
 
 ## 🕵️ Analysis : Why it crashed?
 

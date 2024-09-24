@@ -203,7 +203,7 @@ To validate this theory, I created another `Car` object manually in `MainActivit
 
 ## ❤️‍🩹 How to fix it?
 
-Fixing is simple. You just need to add the `Car` to your ProGuard rules, but a better fix would be to stop using `Gson` and migrate to a JSON library that doesn't use reflection for parsing, like `Moshi CodeGen` (not `moshi-reflect`).
+Fixing is simple. You just need to add the `Car` to your ProGuard rules, but a better fix would be to stop using `Gson` and migrate to a JSON library that doesn't use reflection for parsing, like [Moshi CodeGen](https://github.com/square/moshi?tab=readme-ov-file#codegen) (not `moshi-reflect`) or [Kotlinx.serialisation](https://github.com/Kotlin/kotlinx.serialization)
 
 ## 🤝 Thanks
 

@@ -2,7 +2,7 @@
 author: theapache64
 pubDatetime: 2024-09-24T00:00:00+05:30
 modDatetime: 2024-09-24T00:00:00+05:30
-title: Why fullMode hates Gson so much?
+title: Why fullMode hates Gson so much? 
 slug: 
     why-fullMode-hates-gson-so-much
 featured: true
@@ -13,8 +13,6 @@ tags:
     - r8
     - fullMode
     - gson
-ogImage: 
-    image-15.png
 ---
 
 ![alt text](image-15.png)

@@ -13,7 +13,7 @@ tags:
     - r8
     - fullMode
     - gson
-ogImage: /src/content/blog/image-15.png
+ogImage: image-15.png
 ---
 
 ![alt text](image-15.png)

@@ -185,7 +185,9 @@ Alright. Now the crash makes sense. I'll tell you how it crashed.
 
 ![alt text](image-18.png)
 
-3. Because the parsing failed, the `obj` stays `null` and the condition check inside `EnumUnboxingLocalUtility` throws `ClassCastException`, causing the app to crash there.
+3. Because the parsing failed, the `obj` stays `null` and `cls.cast(obj)` throws `ClassCastException`. Because it was casting to `null`,  and that's why stack trace does not indicate which cast "to" failed. And this exception caused the app to crash.
+
+![alt text](image-9.png)
 
 ## 🕵️ Analysis : Why it crashed?
 

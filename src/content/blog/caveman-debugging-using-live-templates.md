@@ -36,7 +36,7 @@ Live Template is an IntelliJ IDEA feature that offers predefined code snippets a
 
 By combining caveman debugging and live templates, you can create a highly productive workflow. Here are my two most used custom live templates that I use almost everyday. It may look simple and trivial, but it helps a lot! (trust me!)
 
-### 🏷️ Class name and function name
+### 🏷️ Printing class name and function name
 
 **Before - 19s**
 ![](before.mov.gif)
@@ -54,7 +54,7 @@ println("QuickTag: $className$:$functionName$: $END$")
 ![](after.mov.gif)
 
 
-### ⌛ Execution time
+### ⌛ Printing execution time
 
 **Before - ~90s**
 ![](time-calc-before.mov.gif)

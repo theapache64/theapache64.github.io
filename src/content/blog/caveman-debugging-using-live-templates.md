@@ -84,7 +84,7 @@ Nope, there's more! I have many custom live templates that I use in my daily wor
 
 **But**, most of these won't be useful to **YOU** (trust me again please).
 
-This blog post is not about using Live Templates for printing class name and function name or adding timestamps easily. Rather, this blog post is about using a tool that fits your needs. Go analyse your workflow and find the most repeating and boring code you write every day, and write a custom live template for that. That'll definitely help you in the long term
+This blog post is not fully about using Live Templates for printing class name and function name or adding timestamps easily. Rather, this blog post is more about using a tool that fits your needs. Go analyse your workflow and find the most repeating and boring code you write every day, and write a custom live template for that. That'll definitely help you in the long term
 
 ## 🤝 Thanks
 

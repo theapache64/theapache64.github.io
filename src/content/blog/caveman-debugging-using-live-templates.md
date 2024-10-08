@@ -2,13 +2,13 @@
 author: theapache64
 pubDatetime: 2024-10-08T00:00:00+05:30
 modDatetime: 2024-10-08T00:00:00+05:30
-title: Caveman Debugging using Live Templates
+title: Caveman Debugging in the Modern Age
 slug: 
     caveman-debugging-using-live-templates
 featured: true
 draft: false
 description: 
-    How to use Live Templates in caveman debugging, aka. printf debugging
+    How to use live-templates in caveman debugging, aka. printf debugging
 tags:
     - debugging
     - intellij

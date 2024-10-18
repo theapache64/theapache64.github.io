@@ -205,7 +205,7 @@ As you can see, the additional 10 recompositions we added for `AnotherComposable
 
 I must say, while Diffetto is a tiny app, the power of Diffetto is not really visible in this sample app. 
 
-To give you some context, the app I work on, is a fully Compose app, with over a billion downloads on the Play Store. In the early days of Compose, where we didn't have enough support around Macrobenchmarking, finding performance regression was tough with more than 200 of composable getting rendered in a second. In such an environment, the trace becomes too noisy. There, Diffetto played a crucial role in reducing the noise and in turn help find the culprits faster. If you've similar situation, where you basically have two version of the app and don't know what's regressed, I'd suggest try this approach on that. "Diffetto" can also be used in non-composite apps, by the way.  
+To give you some context, the app I work on, is a fully Compose app, with over a billion downloads on the Play Store. In the early days of Compose, where we didn't have enough support around Macrobenchmarking, finding performance regression was tough with more than 200 of composable getting rendered in a second. In such an environment, the trace becomes too noisy. There, Diffetto played a crucial role in reducing the noise and in turn help find the culprits faster. If you've similar situation, where you basically have two version of the app and don't know what's regressed, I'd suggest try this approach on that. "Diffetto" can also be used in non-compose apps, by the way.  
 
 ## 🤝 Thank you
 

@@ -5,7 +5,7 @@ modDatetime: 2024-10-08T00:00:00+05:30
 title: Caveman Debugging in the Modern Age
 slug: 
     caveman-debugging-using-live-templates
-featured: true
+featured: false
 draft: false
 description: 
     How to use live-templates in caveman debugging, aka. printf debugging

@@ -43,11 +43,14 @@ In this blog, we'll be building an app, adding regressions and comparing the bef
 ## 📗 Context
 
 **What's Perfetto?**
-Perfetto is a tool used for trace analysis. It offers services and libraries for recording system-level and app-level traces. Its a web based tool to visualize and explore traces. If you're new to Perfetto, I'd recommend watch [this](https://www.youtube.com/watch?v=phhLFicMacY) video before proceeding. Its one of the best videos that covers the basics of Perfetto.
+
+Perfetto is a web based tool to visualize and explore trace files. It offers services and libraries for recording system-level and app-level traces. If you're new to Perfetto, I'd recommend watch [this](https://www.youtube.com/watch?v=phhLFicMacY) video before proceeding. Its one of the best videos that covers the basics of Perfetto.
 
 **What's Diffetto?**
+
 ![alt text](image-28.png)
-Diffetto is a tiny tool I wrote tool to differentiate Perfetto trace data. We'll see how to use it in this blog.
+
+Diffetto is a tiny tool I wrote to diff two Perfetto traces. We'll see how to use it in this blog.
 
 
 ## 📱 The App

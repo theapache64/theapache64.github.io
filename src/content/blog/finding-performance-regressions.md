@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2024-10-17T00:00:00+05:30
-modDatetime: 2024-10-17T00:00:00+05:30
+pubDatetime: 2025-10-17T00:00:00+05:30
+modDatetime: 2025-10-17T00:00:00+05:30
 title: Compose Performace - Finding Regressions
 slug: 
     finding-performance-regressions

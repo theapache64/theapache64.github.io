@@ -27,7 +27,7 @@ At work, I get to work on a lot of interesting issues. And there were too many i
 
 ## 💥 Crash
 
-My teammate is currently trying to update our compose version from `1.5.x` to `1.7.x` (yeah, that's a long jump). Today, he mentioned that he got a crash. He was saying the app works in one region (let's call it `R1`) and crashes in the other region (let's call it `C1` - `C` stands for crash). He share a stack trace and it looks like this:
+My teammate is currently trying to update our [Jetpack Compose](https://developer.android.com/compose) version from `1.5.x` to `1.7.x` (yeah, that's a long jump). Today, he mentioned that he got a crash. He was saying the app works in one region (let's call it `R1`) and crashes in the other region (let's call it `C1` - `C` stands for crash). He share a stack trace and it looks like this:
 
  ```
  Fatal Exception: java.lang.IllegalStateException: Size(0 x 2147483647) is out of range. Each dimension must be between 0 and 16777215.

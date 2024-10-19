@@ -57,7 +57,7 @@ YES! it crashed
 
  ```
  FATAL EXCEPTION: main
-Process: com.disneyplus.mea, PID: 18074
+Process: com.myapp, PID: 18074
 java.lang.IllegalStateException: Size(992 x 2147483647) is out of range. Each dimension must be between 0 and 16777215.
 	at androidx.compose.ui.internal.InlineClassHelperKt.throwIllegalStateException(InlineClassHelper.kt:26)
 	at androidx.compose.ui.node.LookaheadCapablePlaceable.layout(LookaheadDelegate.kt:576)

@@ -249,4 +249,4 @@ At this point, there's no merit in digging deeper. I could inspect the Compose t
 
 ##  🙏🏼 Concluding
 
-I thought we'd find some concrete reason, like some region checks happening deep inside the code or some country code is that I mentioned above, but it turned out to be another framework crash 😄
+I thought we'd find some concrete reason, like some region checks happening deep inside the code or some country code related stuff as mentioned above, but it turned out to be another framework crash. 😄

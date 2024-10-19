@@ -25,6 +25,8 @@ At work, I get to work on a lot of interesting issues. And there were too many i
 
  At this point, I have a crash in my hand that looks weird (i think most crash at the initial stage looks weird and here's am no difference). So let's debug together. 
 
+## 💥 Crash
+
 My teammate is currently trying to update our compose version from `1.5.x` to `1.7.x` (yeah, that's a long jump). Today, he mentioned that he got a crash. He was saying the app works in one region (let's call it `R1`) and crashes in the other region (let's call it `C1` - `C` stands for crash). He share a stack trace and it looks like this:
 
  ```

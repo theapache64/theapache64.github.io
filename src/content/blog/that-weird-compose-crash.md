@@ -8,7 +8,7 @@ slug:
 featured: false
 draft: false
 description: 
-    A BAU debugging story...
+    A debugging story about a strange crash in ConstraintLayout...
 tags:
     - compose
     - performance
@@ -16,12 +16,16 @@ tags:
     - android
 ---
 
+## 📄 Disclaimer
+
+This blog is intentionally unpolished. I wrote it directly from my thoughts, so it may include some unnecessary or awkward sentences, but I chose to leave them in. The rawness is part of its purpose.
+
+## 📗 Context
 
 At work, I get to work on a lot of interesting issues. And there were too many interesting stories to tell, which I don't remember fully enough to write as a blog now. So I was thinking of documenting my next debugging session while I debug and this is _that_ blog.
 
  At this point, I have a crash in my hand that looks weird (i think most crash at the initial stage looks weird and here's am no difference). So let's debug together. 
 
- ## 📗 Context
 
 My teammate is currently trying to update our compose version from `1.5.x` to `1.7.x` (yeah, that's a long jump). Today, he mentioned that he got a crash. He was saying the app works in one region (let's call it `R1`) and crashes in the other region (let's call it `C1` - `C` stands for crash). He share a stack trace and it looks like this:
 

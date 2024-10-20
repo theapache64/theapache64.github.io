@@ -25,7 +25,8 @@ This blog may feel like a "cliffhanger," but it doesn't have a good ending. If y
 
 At work, I get to work on a lot of interesting issues. And there were too many interesting stories to tell, which I don't remember fully enough to write as a blog now. So I was thinking of documenting my next debugging session while I debug and this is _that_ blog.
 
- At this point, I have a crash in my hand that looks weird (i think most crash at the initial stage looks weird and here's am no difference). So let's debug together. 
+ At this point, I have a crash in my hand that looks weird (i think most crash at the initial stage looks weird and here's am no difference).
+  So let's debug together. 
 
 ## 💥 Crash
 
@@ -49,7 +50,9 @@ Based on the stack trace, the crash is happening from the `ConstraintLayout` lib
 
 This is what we usually do when an unexpected crash occurs. We update the dependency or the class causing the crash and try it again without even looking at the code, because historically speaking, the time spent debugging these issues never ended up with a happy ending.
 
-But, this time, with that _region_ part involved, I got curious about what might be the reason for such a crash. What's interesting is that both regions run on the same codebase. So any UI crash present in one region should ideally be present in the other region as well. This is puzzling because this is something that should not have happened based on the structure of the code.
+But, this time, with that _region_ part involved, I got curious about what might be the reason for such a crash. What's interesting is that both regions run on the same codebase. So any UI crash present in one region should ideally be present in the other region as well. This is puzzling because this is something that should not have happened based on the structure of the code. 
+
+Please note my goal with this blog is to explore the issue as much as I can within the _limited time_ I have. Since the solution is already available and I can't spend too much time digging deeper on this.
 
  ## 🪲 Reproducing
  
@@ -247,8 +250,8 @@ Now, let's go  back to our main question.. why only `C1`, why not `R1`? Isn't  `
 
 Its getting triggered, but doesn't crash! in `R1`! SUPER WEIRD! 
 
-At this point, there's no merit in digging deeper. I could inspect the Compose tree and delve into it, but I don't see a point right now. This is one of those framework crashes that doesn't make sense at all. Of course, there could be a reason within the framework, but it's not worth debugging it further for me as my app is not doing anything wrong.
+At this point, I've already timed out (almost twice). This is one of those framework crashes that doesn't make sense at all to me. Of course, there could be a reason within the framework, but it's not worth debugging it further for me as my app is not violating any Compose rules and the fix is already there. This is where I have to force myself to stop debugging this.
 
 ##  🙏🏼 Concluding
 
-I thought we'd find some concrete reason, like some region checks happening deep inside the code or some country code related stuff as mentioned above, but it turned out to be another framework crash. 😄
+To be honest, I thought we'd find some concrete reason, like some region checks happening deep inside the code or some country code related stuff as mentioned above, but it turned out to be another framework crash 😄

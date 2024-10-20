@@ -19,7 +19,6 @@ tags:
 
 This blog is intentionally unpolished. I wrote it directly from my thoughts, so it may include some unnecessary or awkward sentences, but I chose to leave them in. The rawness is part of its purpose. 
 
-This blog may feel like a "cliffhanger," but it doesn't have a good ending. If you're looking for that, feel free to check out other [posts](https://theapache64.github.io/posts/)
 
 ## 📗 Context
 

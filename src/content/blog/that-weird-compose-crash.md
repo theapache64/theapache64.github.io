@@ -1,7 +1,7 @@
 ---
 author: theapache64
 pubDatetime: 2024-10-19T00:00:00+05:30
-modDatetime: 2024-10-19T00:00:00+05:30
+modDatetime: 2024-10-20T00:23:25+05:30
 title: That Weird Compose Crash
 slug: 
     that-weird-compose-crash

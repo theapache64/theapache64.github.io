@@ -19,8 +19,6 @@ tags:
 
 This blog is intentionally unpolished. I wrote it directly from my thoughts, so it may include some unnecessary or awkward sentences, but I chose to leave them in. The rawness is part of its purpose. 
 
-This blog may feel like a "cliffhanger," but it doesn't have a good ending. If you're looking for that, feel free to check out other [posts](https://theapache64.github.io/posts/)
-
 ## 📗 Context
 
 At work, I get to work on a lot of interesting issues. And there were too many interesting stories to tell, which I don't remember fully enough to write as a blog now. So I was thinking of documenting my next debugging session while I debug and this is _that_ blog.
@@ -52,7 +50,7 @@ This is what we usually do when an unexpected crash occurs. We update the depend
 
 But, this time, with that _region_ part involved, I got curious about what might be the reason for such a crash. What's interesting is that both regions run on the same codebase. So any UI crash present in one region should ideally be present in the other region as well. This is puzzling because this is something that should not have happened based on the structure of the code. 
 
-Please note my goal with this blog is to explore the issue as much as I can within the _limited time_ I have. Since the solution is already available and I can't spend too much time digging deeper on this.
+Please note my goal with this blog is to explore the issue as much as I can within the _limited time_ I have. Since the solution is already available and I can't spend too much time digging deeper on this. 
 
  ## 🪲 Reproducing
  

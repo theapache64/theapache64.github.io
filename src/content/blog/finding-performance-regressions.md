@@ -1,11 +1,11 @@
 ---
 author: theapache64
-pubDatetime: 2025-10-17T00:00:00+05:30
-modDatetime: 2025-10-17T00:00:00+05:30
+pubDatetime: 2024-10-26T00:00:00+05:30
+modDatetime: 2024-10-26T00:00:00+05:30
 title: Compose Performace - Finding Regressions
 slug: 
     finding-performance-regressions
-featured: false
+featured: true
 draft: false
 description: 
     How to find performance regressions in your Jetpack Compose code using Perfetto and Diffetto
@@ -22,7 +22,7 @@ tags:
 
 ## 📜 Disclaimer
 
-This blog isn't about the only way to detect performance regressions. It's just one of the apporaches I use. Like any tool, it's important to know when and where to use it, so consider if this method fits your situation. 
+This blog isn't about the best way to detect performance regressions. It's just one of the approaches I use, which works for me. This solution may or may not work for you. Like any tool, it's important to know when and where to use it, so consider if this method fits your situation.
 
 Let's go! 🚀
 
@@ -205,7 +205,7 @@ As you can see, the additional 10 recompositions we added for `AnotherComposable
 
 I must say, while Diffetto is a tiny app, the power of Diffetto is not really visible in this sample app. 
 
-To give you some context, the app I work on, is a fully Compose app, with over a billion downloads on the Play Store. In the early days of Compose, where we didn't have enough support around Macrobenchmarking, finding performance regression was tough with more than 200 of composable getting rendered in a second. In such an environment, the trace becomes too noisy. There, Diffetto played a crucial role in reducing the noise and in turn help find the culprits faster. If you've similar situation, where you basically have two version of the app and don't know what's regressed, I'd suggest try this approach on that. "Diffetto" can also be used in non-compose apps, by the way.  
+To give you some context, the app I work on, is a fully Compose app. In the early days of Compose, where we didn't have enough support around Macrobenchmarking, finding performance regression was tough with more than 200 of composable getting rendered in a second. In such an environment, the trace becomes too noisy. There, Diffetto played a crucial role in reducing the noise and in turn help find the culprits faster. If you've similar situation, where you basically have two version of the app and don't know what regressed, I'd suggest try this approach on that. "Diffetto" can also be used in non-compose apps, by the way.  
 
 ## 🤝 Thank you
 

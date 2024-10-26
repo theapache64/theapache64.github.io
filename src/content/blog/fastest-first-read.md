@@ -1,11 +1,11 @@
 ---
 author: theapache64
-pubDatetime: 2024-10-19T00:00:00+05:30
-modDatetime: 2024-10-20T00:23:25+05:30
+pubDatetime: 2025-10-19T00:00:00+05:30
+modDatetime: 2025-10-20T00:23:25+05:30
 title: Fastest Way To Read A Boolean From Disk
 slug: 
-    
-featured: true
+    fastest-first-read
+featured: false
 draft: false
 description: 
     One day, while debugging a weird crash in Compose ConstraintLayout...

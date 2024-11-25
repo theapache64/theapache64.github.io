@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2024-11-25T21:17:45+05:30
-modDatetime: 2024-11-25T21:17:45+05:30
+pubDatetime: 2024-11-25T21:17:45+00:00
+modDatetime: 2024-11-25T21:17:45+00:00
 title: Google Sheet as Remote Config for Microcontrollers
 slug: 
     google-sheet-as-remote-config-for-microcontrollers

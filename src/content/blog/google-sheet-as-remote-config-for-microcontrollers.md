@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2024-11-25T21:17:45+00:00
-modDatetime: 2024-11-25T21:17:45+00:00
+pubDatetime: 2024-11-24T21:17:45+00:00
+modDatetime: 2024-11-24T21:17:45+00:00
 title: Google Sheet as Remote Config for Microcontrollers
 slug: 
     google-sheet-as-remote-config-for-microcontrollers
@@ -28,7 +28,9 @@ Source:
 
 ## 🥲 Problem Statement
 
-Alright. Let's talk about one of the problems I faced. The microcontroller I am mainly using is the `ESP8266`/`ESP32` and it takes around 20-25 seconds to "upload" the code to the MCU. While it's better than the Android build time at work (😜), any variable change taking 20-25 seconds feels kinda off. Plus, while reading more about it, I found that these microcontrollers have a limit on how many times I can "upload" the code (write/erase cycle). The limit is between 10,000 to 100,000 write/erase cycles, but the exact number can vary based on environmental factors such as temperature and how frequently I write (source: perplexity.ai - CMIIW). 
+Alright. Let's talk about the problem. 
+
+The microcontroller I am mainly using is the `ESP8266`/`ESP32` and it takes around 20-25 seconds to "upload" the code to the MCU. While it's better than the Android build time at work (😜), any variable change taking 20-25 seconds feels kinda off. Plus, while reading more about it, I found that these microcontrollers have a limit on how many times I can "upload" the code (write/erase cycle). The limit is between 10,000 to 100,000 write/erase cycles, but the exact number can vary based on environmental factors such as temperature and how frequently I write (source: perplexity.ai - CMIIW). 
 
 ![alt text](image-32.png)
 

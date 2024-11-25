@@ -49,7 +49,7 @@ I chose Google Sheets for this purpose, mainly because I don't have to maintain 
 
 First, I created a Google Sheet like this.
 
-![alt text](image-29.png)
+![alt text](image-42.png)
 
 ## 🦶🏼🦶🏼 Step 2: Write config class
 

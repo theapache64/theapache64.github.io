@@ -53,7 +53,8 @@ First, I created a Google Sheet like this.
 
 ## 🦶🏼🦶🏼 Step 2: Write config class
 
-then I used Google Sheet's "auth free CSV endpoint" to download the values as key-value pairs. The only requirement is that your sheet has to be publicly readable.
+Then I wrote a `Config` class that uses Google Sheet's "auth free CSV endpoint" to download the values as key-value pairs. 
+The only requirement is that your sheet has to be publicly readable.
 
 ```c++
 #include <ESP8266WiFi.h>
@@ -155,7 +156,7 @@ class Config {
 };
 ```
 
-(I hope the code is self-explanatory and I don’t want to explain it again here)
+(I hope the code is self-explanatory 🙂)
 
 ## 🤓 Usage
 
@@ -210,7 +211,7 @@ Please note: this is a real-world example with unrelated code redacted for the s
 
 ## 📜 Source Code
 
-If you want to reuse this approach in your projects, you can simply copy and paste the above config class and use it by changing the sheetId and sheet name. Here's the [full code](https://github.com/theapache64/harbor/blob/master/src/Config.cpp)
+If you want to reuse this approach in your projects, you can simply copy and paste the above `Config` class and use it by changing the `sheetId` and `sheetName`. Here's the [full code](https://github.com/theapache64/harbor/blob/master/src/Config.cpp)
 
 If you want to use the same method for your Android or JVM apps, you can use my library called [retrosheet](https://github.com/theapache64/retrosheet). It uses the same principle, but fancier way ;) 
 

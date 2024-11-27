@@ -213,7 +213,7 @@ Please note: this is a real-world example with unrelated code redacted for the s
 
 If you want to reuse this approach in your projects, you can simply copy and paste the above `Config` class and use it by changing the `sheetId` and `sheetName`. Here's the [full code](https://github.com/theapache64/harbor/blob/master/src/Config.cpp)
 
-If you want to use the same method for your Android or JVM apps, you can use my library called [retrosheet](https://github.com/theapache64/retrosheet). It uses the same principle, but fancier way ;) 
+If you want to use the same method for your Android or JVM apps, you can use my library called [fig](https://github.com/theapache64/fig). It uses the same principle ;) 
 
 ## 🤝 Thanks
 

@@ -51,6 +51,8 @@ First, I created a Google Sheet like this.
 
 ![alt text](image-42.png)
 
+Please note, your value field can't have two data types. To solve this, always wrap your number inputs with `TO_TEXT` function. Eg: `=TO_TEXT("2.4")`
+
 ## 🦶🏼🦶🏼 Step 2: Write config class
 
 Then I wrote a `Config` class that uses Google Sheet's "auth free CSV endpoint" to download the values as key-value pairs. 
@@ -208,6 +210,7 @@ void loop() {
 ```
 
 Please note: this is a real-world example with unrelated code redacted for the sake of clarity. You can find the full code [here](https://github.com/theapache64/harbor/blob/master/src/main.cpp)
+
 
 ## 📜 Source Code
 

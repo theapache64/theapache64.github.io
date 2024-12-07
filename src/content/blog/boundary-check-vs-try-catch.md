@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2024-12-07T19:40:00+00:00
-modDatetime: 2024-12-07T19:40:00+00:00
+pubDatetime: 2024-11-24T21:17:45+00:00
+modDatetime: 2024-11-24T21:17:45+00:00
 title: Boundary Check vs Try-Catch
 slug: 
     boundary-check-vs-try-catch
@@ -13,7 +13,7 @@ tags:
     - performance
 ---
 
-![boundary check vs try catch meme](image-43.png)
+![boundary-check-vs-try-catch-meme](image-43.png)
 
 During the [day 4](https://adventofcode.com/2024/day/4) advent of code 2024, I noticed the above meme in Reddit 😄. I got curious about the performance of both approach and thought of benchmarking it
 

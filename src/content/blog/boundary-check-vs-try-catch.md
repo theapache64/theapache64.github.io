@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2024-11-24T21:17:45+00:00
-modDatetime: 2024-11-24T21:17:45+00:00
+pubDatetime: 2024-12-07T15:00:00+00:00
+modDatetime: 2024-12-07T15:00:00+00:00
 title: Boundary Check vs Try-Catch
 slug: 
     boundary-check-vs-try-catch

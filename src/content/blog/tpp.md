@@ -6,7 +6,7 @@ title: TPP - The Pragmatic Programmer
 slug: 
     tpp
 featured: false
-draft: false
+draft: true
 description: 
     TPP - The Pragmatic Programmer
 tags:

@@ -6,7 +6,7 @@ title: TPP - The Pragmatic Programmer
 slug: 
     tpp
 featured: false
-draft: true
+draft: false
 description: 
     TPP - The Pragmatic Programmer
 tags:
@@ -31,7 +31,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 > Tip 4 : Provide Options, Don't Make Lame Excuses
 
 ## Day 2 (Jan 28)
-- **Software Entropy:** 
+- **Software Entropy:** This chapter explains how tech debt originates, its impact on projects, and how to manage it. It uses a "broken window" analogy for real-world relatability. The key takeaway is to prevent tech debt and maintain clear actions items for existing tech debts.
 - **Stone Soup and Boiled Frogs:**
 
 ## Day 3 (Jan 29)

@@ -17,7 +17,7 @@ I don't read much, and I want to change that. I've read a couple of books, but i
 
 I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, and I plan to read at least 2 topics a day, which will take about 26 days! 🥴
 
-## Day 1 (Jan 27)
+## Day 1 : Chapter 1 (Jan 27)
 - **Foreword and Preface:** This part shows how the book's content is simple and timeless compared to other tech books. It highlights how intimidating other books can be and emphasizes the importance of simplicity, which is key to this book. Also, the chapters can be read in any order since they're independent.
 
 > Tip 1 : Care About Your Craft
@@ -32,8 +32,33 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 ## Day 2 (Jan 28)
 - **Software Entropy:** This chapter explains how tech debt originates, its impact on projects, and how to manage it. It uses a "broken window" analogy for real-world relatability. The key takeaway is to prevent tech debt and maintain clear actions items for existing tech debts.
-- **Stone Soup and Boiled Frogs:**
+- **Stone Soup and Boiled Frogs:**  This chapter covers building something step by step and how to creatively persuade others to help you without causing resentment towards you or the project. 
 
 ## Day 3 (Jan 29)
 - **Good-Enough Sofware:** 
+    - First version of any system should only be "good enough" and shouldn't be the best
+    - Know when to improve and when to stop
+    - Set tight scope for each version
+    - Ship as early as possible to get early feedback
 - **Your Knowledge Portfolio:**
+    - Develop a habit of learning different new things
+    - Participate in local groups and meetups and understand what others are working
+    - Read a book a month
+    - Think critically (5 whys method)
+
+> Failed to maintain consistency. Restarting on Feb 12
+
+## Day 4 (Feb 11)
+- **Communicate:** 
+    - Communication is equally important as your idea or work
+    - Filter and convert your conversation based on your audience
+    - Write an outline first before writing anything
+    - Ask if its a good time before throwing a new idea at someone
+    - Value the presentation style and model
+    - Provide early drafts for early feedback
+    - Listen, even if you already know 
+    - Documentation is an intergral part of a good system
+
+> This chapter was longer. Hence only one topic
+
+## Day 5 : Chapter 2 (Feb 12)

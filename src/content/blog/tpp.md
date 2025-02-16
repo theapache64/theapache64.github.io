@@ -20,19 +20,24 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 ## Day 1 : Chapter 1 (Jan 27)
 - **Foreword and Preface:** This part shows how the book's content is simple and timeless compared to other tech books. It highlights how intimidating other books can be and emphasizes the importance of simplicity, which is key to this book. Also, the chapters can be read in any order since they're independent.
 
-> Tip 1 : Care About Your Craft
-> Tip 2 : Think About Your Work
+> Tip 1: Care About Your Craft
+> Tip 2: Think About Your Work
 
-- **It's Your Life:** People are complaining about issues at work but not taking action to fix them. This includes every complaint from developers. The goal is to take action until the problem is solved.
+- **[It's Your Life](https://x.com/TlogOfTheDay/status/1884345281199890680):** People are complaining about issues at work but not taking action to fix them. This includes every complaint from developers. The goal is to take action until the problem is solved.
 > Tip 3: You Have Agency
 
-- **The Cat Ate My Source Code:** Things can go wrong. Instead of blaming someone, focus on finding a solution. This chapter emphasizes the value of ownership as well.
+- **[The Cat Ate My Source Code](https://x.com/TlogOfTheDay/status/1884697560687784340):** Things can go wrong. Instead of blaming someone, focus on finding a solution. This chapter emphasizes the value of ownership as well.
 
-> Tip 4 : Provide Options, Don't Make Lame Excuses
+> Tip 4: Provide Options, Don't Make Lame Excuses
 
 ## Day 2 (Jan 28)
-- **Software Entropy:** This chapter explains how tech debt originates, its impact on projects, and how to manage it. It uses a "broken window" analogy for real-world relatability. The key takeaway is to prevent tech debt and maintain clear actions items for existing tech debts.
-- **Stone Soup and Boiled Frogs:**  This chapter covers building something step by step and how to creatively persuade others to help you without causing resentment towards you or the project. 
+- **[Software Entropy](https://x.com/TlogOfTheDay/status/1889408618279346401):** This chapter explains how tech debt originates, its impact on projects, and how to manage it. It uses a "broken window" analogy for real-world relatability. The key takeaway is to prevent tech debt and maintain clear actions items for existing tech debts.
+
+> Tip 5: Don't Live with Broken Windows
+
+- **[Stone Soup and Boiled Frogs](https://x.com/TlogOfTheDay/status/1891191104139083849):**  This chapter covers building something step by step and how to creatively persuade others to help you without causing resentment towards you or the project. 
+
+> Tip 6: Be a Catalyst for Change
 
 ## Day 3 (Jan 29)
 - **Good-Enough Sofware:** 

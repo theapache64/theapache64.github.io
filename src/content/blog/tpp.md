@@ -38,23 +38,31 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 - **[Stone Soup and Boiled Frogs](https://x.com/TlogOfTheDay/status/1891191104139083849):**  This chapter covers building something step by step and how to creatively persuade others to help you without causing resentment towards you or the project. 
 
 > Tip 6: Be a Catalyst for Change
+> Tip 7: Remember the Big Picture 
+
 
 ## Day 3 (Jan 29)
-- **Good-Enough Sofware:** 
+- **[Good-Enough Sofware](https://x.com/TlogOfTheDay/status/1891194941814026366):** 
     - First version of any system should only be "good enough" and shouldn't be the best
     - Know when to improve and when to stop
     - Set tight scope for each version
     - Ship as early as possible to get early feedback
-- **Your Knowledge Portfolio:**
+
+> Tip 8: Make Quality a Requirements Issue
+
+- **Your Knowledge Portfolio [1]()[2]():**
     - Develop a habit of learning different new things
     - Participate in local groups and meetups and understand what others are working
     - Read a book a month
     - Think critically (5 whys method)
 
+> Tip 9 : Invest Regularly in Your Knowledge Portfolio
+> Tip 10: Critically Analyze What You Read and Hear
 > Failed to maintain consistency. Restarting on Feb 12
 
+
 ## Day 4 (Feb 11)
-- **Communicate:** 
+- **Communicate [1]()[2]():** 
     - Communication is equally important as your idea or work
     - Filter and convert your conversation based on your audience
     - Write an outline first before writing anything
@@ -64,6 +72,20 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
     - Listen, even if you already know 
     - Documentation is an intergral part of a good system
 
+> Tip 11: English is Just Another Programming Language
+
+> Tip 12: It's Both What You Say and the Way You Say It
+
+> Tip 13: Build Documentation In, Don't Bolt It On
+
 > This chapter was longer. Hence only one topic
 
-## Day 5 : Chapter 2 (Feb 12)
+## Day 5 : Chapter 2 (Feb 17)
+- **The Essence of Good Design:**
+    - ETC (Easy to Change) is the base of all design principle
+    - Well designed code basically means easy to change code
+    - ETC is value, that guides you to choose the right path for your code
+    - Always ask yourself the ETC value of the code you just wrote
+    - Try to make what you write replaceable. If not sure, add placeholder tag for future
+
+> Tip 14: Good Design is Easier to Change Than Bad Design 

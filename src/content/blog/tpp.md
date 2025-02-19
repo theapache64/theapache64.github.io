@@ -50,7 +50,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 > Tip 8: Make Quality a Requirements Issue
 
-- **Your Knowledge Portfolio [1]()[2]():**
+- **Your Knowledge Portfolio [1](https://x.com/TlogOfTheDay/status/1891393142823477465)[2](https://x.com/TlogOfTheDay/status/1891499846236008846):**
     - Develop a habit of learning different new things
     - Participate in local groups and meetups and understand what others are working
     - Read a book a month
@@ -62,7 +62,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 
 ## Day 4 (Feb 11)
-- **Communicate [1]()[2]():** 
+- **Communicate [1](https://x.com/TlogOfTheDay/status/1891760564432498910)[2](https://x.com/TlogOfTheDay/status/1891867015729774684):** 
     - Communication is equally important as your idea or work
     - Filter and convert your conversation based on your audience
     - Write an outline first before writing anything
@@ -81,7 +81,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 > This chapter was longer. Hence only one topic
 
 ## Day 5 : Chapter 2 (Feb 17)
-- **The Essence of Good Design:**
+- **[The Essence of Good Design](https://x.com/TlogOfTheDay/status/1892046451204579542):**
     - ETC (Easy to Change) is the base of all design principle
     - Well designed code basically means easy to change code
     - ETC is value, that guides you to choose the right path for your code
@@ -89,3 +89,11 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
     - Try to make what you write replaceable. If not sure, add placeholder tag for future
 
 > Tip 14: Good Design is Easier to Change Than Bad Design 
+
+## Day 6 (Feb 18)
+
+- **[DRY : The Evils of Duplication]()**
+    - DRY is not just about copy paste of code, rather duplication of knowledge. This include duplication in different way and in code comments as well.
+    - Method/function documentation should be minimised and the code should be the documentation
+
+> Tip 15: Don't Repeat Yourself

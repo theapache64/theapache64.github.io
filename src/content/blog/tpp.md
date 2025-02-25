@@ -92,8 +92,16 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 ## Day 6 (Feb 18)
 
-- **[DRY : The Evils of Duplication]()**
+- **DRY : The Evils of Duplication[1](https://x.com/TlogOfTheDay/status/1892404809141252222)[2]()[3]()**
     - DRY is not just about copy paste of code, rather duplication of knowledge. This include duplication in different way and in code comments as well.
     - Method/function documentation should be minimised and the code should be the documentation
+    - Code duplciatation is okay in some case where it has different meaning at functional level
+    - DRY violation in data shouldn't be exposed and should be mitigated with in the entity (or class)
+    - Socialise common utilities where people will find it easy to reuse rather than creating their own version
 
 > Tip 15: Don't Repeat Yourself
+> Tip 16: Make It Easy to Reuse
+
+
+## Day 7 (Feb 26)
+- **Orthogonality**

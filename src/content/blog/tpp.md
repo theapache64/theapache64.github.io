@@ -92,7 +92,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 ## Day 6 (Feb 18)
 
-- **DRY : The Evils of Duplication[1](https://x.com/TlogOfTheDay/status/1892404809141252222)[2]()[3]()**
+- **DRY : The Evils of Duplication[1](https://x.com/TlogOfTheDay/status/1892404809141252222)[2](https://x.com/TlogOfTheDay/status/1894594991441207634)[3](https://x.com/TlogOfTheDay/status/1894958385113768013)**
     - DRY is not just about copy paste of code, rather duplication of knowledge. This include duplication in different way and in code comments as well.
     - Method/function documentation should be minimised and the code should be the documentation
     - Code duplciatation is okay in some case where it has different meaning at functional level
@@ -103,5 +103,10 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 > Tip 16: Make It Easy to Reuse
 
 
-## Day 7 (Feb 26)
+## Day 7 (Feb 27)
 - **Orthogonality**
+    - Orthogonal systems = easy to design, build, test and extend
+    - Independent systems where one's change doesn't affect the other 
+    - Layered orthogonal systems are much easier to maintain due to the abstraction
+
+> Tip 17: Eliminate Effects Between Unrelated Things

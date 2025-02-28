@@ -108,5 +108,11 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
     - Orthogonal systems = easy to design, build, test and extend
     - Independent systems where one's change doesn't affect the other 
     - Layered orthogonal systems are much easier to maintain due to the abstraction
+    - Careful when introducing a library that imposes changes in your code
+    - Write shy code - modules that don't reveal unneccesary thing about them and don't rely on other modules
+    - Avoid global data
+    - Writing test is itself is a test to check your code is orthogonal or not
+    - When writing documentation, don't worry about style. Use something like Markdown
+    - Combining DRY + Orthogonal code produces flexible systems 
 
 > Tip 17: Eliminate Effects Between Unrelated Things

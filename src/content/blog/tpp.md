@@ -104,7 +104,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 
 ## Day 7 (Feb 27)
-- **Orthogonality**
+- **Orthogonality[1](https://x.com/TlogOfTheDay/status/1895402562154573957)[2](https://x.com/TlogOfTheDay/status/1895728459361423786)**
     - Orthogonal systems = easy to design, build, test and extend
     - Independent systems where one's change doesn't affect the other 
     - Layered orthogonal systems are much easier to maintain due to the abstraction
@@ -116,3 +116,8 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
     - Combining DRY + Orthogonal code produces flexible systems 
 
 > Tip 17: Eliminate Effects Between Unrelated Things
+
+## Day 8 (Mar 3)
+- **[Reversibility](https://x.com/TlogOfTheDay/status/1896417081203343627)**
+    - Requirements and users change before you finish the code
+    - Abstract your 3P integration code in a way that the 3P can be replaced easily with another one without changing any other Layered

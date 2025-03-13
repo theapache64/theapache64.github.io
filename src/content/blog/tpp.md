@@ -121,3 +121,7 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 - **[Reversibility](https://x.com/TlogOfTheDay/status/1896417081203343627)**
     - Requirements and users change before you finish the code
     - Abstract your 3P integration code in a way that the 3P can be replaced easily with another one without changing any other Layered
+
+> Tip 18: There Are No Final Decisions
+
+> Tip 19: Forgo Following Fads

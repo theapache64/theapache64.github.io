@@ -124,4 +124,4 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 > Tip 18: There Are No Final Decisions
 
-> Tip 19: Forgo Following Fads
+> Tip 19: Forgo Following Fads!

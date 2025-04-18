@@ -36,7 +36,7 @@ The microcontroller I am mainly using is the `ESP8266`/`ESP32` and it takes arou
 
 Since I am new to the world of microcontrollers, most of my "uploads" (flashes) for tweaking variable values out of curiosity about what would happen or to match certain behaviors. For example, I'd experiment with different servo angles, water pumping durations, loop delays, etc 
 
-## 💡 Idea
+## 💡 !dea
 
 ![alt text](image-35.png)
 

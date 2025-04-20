@@ -125,3 +125,18 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 > Tip 18: There Are No Final Decisions
 
 > Tip 19: Forgo Following Fads!
+
+## Day 9 (Apr 20)
+
+- **Tracer Bullets**
+    - Tracer Bullet Development is a way of building things with immediate feedback under actual conditions. During this time the goal may keep moving based on user feedback
+    - End to end flow is covered, but only the essential blocks are built and mostly areas unknown and base to the product
+    - Advantages:
+        - Early feedback from users
+        - Real world environment ready from day 1
+        - Faster feedback for developers (faster debugging and testing because you're in real world env)
+        - Up to date demo
+        - Better feel and sense of progress since each update solves a usecase
+        - Tracer code != prototyping because code is not thrown away, but being built up on
+    
+> Tip 20: Use Tracer Bullets to Find the Target

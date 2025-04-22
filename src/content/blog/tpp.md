@@ -140,3 +140,13 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
         - Tracer code != prototyping because code is not thrown away, but being built up on
     
 > Tip 20: Use Tracer Bullets to Find the Target
+
+## Day 10 (Apr 21)
+- **Prototypes and Post-it Notes**
+    - Prototypes are used to analyse and expose risk.
+    - They could be on a whiteboard, paper, mock up or even in code.
+    - Correctness, completeness, robustness and style should NOT be part of the prototype 
+    - They are disposable and should be cheap to develop
+    - Prototyping gives you an environment to experiment and expose risk. This is often is a learning experience. 
+
+> Tip 21: Prototype to learn

@@ -149,4 +149,17 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
     - They are disposable and should be cheap to develop
     - Prototyping gives you an environment to experiment and expose risk. This is often is a learning experience. 
 
-> Tip 21: Prototype to learn
+> Tip 21: Prototype to Learn
+
+## Day 11 (June 17)
+- **Domain Languages**
+    - Don't use a programming jargons to communicate 
+    - Use a language that's known to both the engineers and the domain experts
+    - Use domain specific abstractions to make the code more readable to domain experts
+
+- **Estimating**
+    - Estimation is difficult and can't be accurate and constant
+    - The easiest way to find an estimate is to ask the person who have already done it
+    - Before giving an estimate, make sure you scope each part or phase of the project
+    - Provide range rather than an accurate date, iterate on the date as you move
+    - When estimate goes wrong, do a retro and learn! (this is a must)

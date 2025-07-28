@@ -2,80 +2,55 @@
 author: theapache64
 pubDatetime: 2025-07-27T15:00:00+00:00
 modDatetime: 2025-07-27T15:00:00+00:00
-title: The Boy Who Loved Fireflies and Electronics
+title: Learning Basic Electronics By Building FireFlies
 slug: 
-    the-boy-who-loved-fireflies
+    learning-basic-electronics-by-building-fireflies
 featured: true
 draft: false
 description: 
-    A heartwarming tale about curiosity, wonder, and the magic of nature's simplest creatures
+    Journey from missing real fireflies to learning basic electronics and building my own blinking "fireflies"
 tags:
-    - storytelling
-    - nature
-    - childhood
+    - eletronics
+    - circuit
+    - tooling
 ---
-There lived a boy who loved fireflies.  But in recent years, the fireflies stopped coming for some reason. He started missing them.
+I love fireflies. But in recent years, they stopped coming for reasons I don't know. No tiny, glowing dots in the dark like they used to. I missed them more than I expected 😔
 
-One day, while browsing the internet, he came accross a topic called "Astable Multivibrator"—a clever circuit that can blink an LED, even with a 1.5V battery, and that too for over a year if optimised well(yeah, running 24/7)
-[image:3]
+[boy sad about fireflies not coming]
 
-He thought, "I can make fireflies with this!"
-[image:4]
+One day, while aimlessly browsing the web, I stumbled onto something called an Astable Multivibrator. It looked like magic to me TBH — a tiny circuit, that could blink an LED, even with a basic 1.5V battery, and could theoretically keep blinking for more than an YEAR if optimized well. YES! `> 365` days!... Instantly I asked myself: "Can I make my own fireflies with this?"
 
-But he didn’t know the basics of electronics, so he started learning: what is a resistor, a capacitor, and a transistor. He learned the basics one by one.
-[image:5]
+But there was one big problem: I didn’t know the first thing about electronics, not even the difference between voltage and current (trust me). Plus, now I needed to learn what a resistor, a capacitor, and a transistor actually is and does. It was slow going, but step by step, I picked up the basics. I kept asking AI tools with my questions—sometimes embarrassingly simple ones and slowly, the fog began to lift 😇
 
-He used AI to ask his questions about basic electronics, even very simple ones.
-[image:6]
+Loaded with just enough theory (and a lot of YouTube and AI advice), I took my bike with a shopping list in my pocket and bought my first few components. Back at home, I assembled my first blinking LED circuit. To my surprise, it worked on the first try!! (even softwares don't do this, IYKYK). 
 
-Once he learned the items he needed to build the firefly, he rushed to the nearest electronics shop and bought the needed components.
-[image:7]
+But somethings still bugged me. One, it blinks all day. Two, the LED blinked at every second. Fireflies don't blink this fast and they don’t blink all day. These were true deal breakers. 
 
-He came back and built it, and luckily, it worked on the first try. Yes—the LED was blinking, but too fast. He asked Perplexity how to slow it down. Perplexity suggested increasing the resistance or the capacitor’s capacity.
-[image:8]
+I wanted my firefly to only blink at night and slow down the blinking. The first part wud cut the energy consumption by half. I asked my first question: "How can I make it blink only at night?" Perplexity introduced me to the LDR (Light Dependent Resistor). I was mind-blown. That’s exactly what I needed. I couldn't believe it. It sounded like AI hallucination to me at tha time TBH. Just to be sure, I checked if LDRs are real. They are! I jumped on my bike and rushed to the shop again. Got few. Soldered one into my circuit.
 
-Then he thought, "This blinks 24/7, but fireflies don’t blink all the time. I want them to blink only at night." Curious, he asked Perplexity: "How can I make this blink only at night?"
-[image:9]
+It did NOT work! I realized I connected it wrong (my bad, Perplexity’s bad, or maybe we both 🤷🏼‍♂️). Once I hooked it up correctly, it was like magic: the LED would stay ON only in the dark. Even better, I learned I could adjust the sensitivity by adding an resistor in series with the LDR.
 
-Perplexity suggested using an LDR—a Light Dependent Resistor—which changes resistance based on light. The boy was stunned: "That’s exactly what I need!" He double-checked if LDRs are real. They are! Excited, he took his bike and went to the electronics shop to buy a few LDRs.
-[image:10]
+To fine-tune the blink delay, I discovered I can tweak with the capacitor and resistor values. I swapped out a 100kΩ resistor for 500kΩ and noticed the interval between blinks stretched from 1 to 5 seconds. I experimented with different capacitor values also and, after a lot of trial and error, even built my own little web-based simulator to predict blink delays -> https://a64.in/tools/astable-delay-simulator.html (I guess the software guy in me couldn't rest!). 
 
-He came home excitedly and started to solder the LDR into the circuit. "Nah... it’s not working," he thought. Something was missing. He dug deeper and realized Perplexity had suggested the wrong connection. He made the right connection and—voilà! The LED didn’t blink when the room light was on.
-[image:11]
+After that, I wanted to verify if my resistor and capacitor values were optimal. I learned how to measure power consumption with a multimeter and discovered that using a lower-value capacitor and higher resistance was best. I built another calculator ,https://a64.in/tools/battery-life-calculator.html, to estimate how long my “firefly” would glow before the battery died — it showed over ~8 months, by my math. 
 
-But it blinked in low light. He turned to Perplexity again and asked how to adjust the sensitivity. The answer was to add a resistor in series with the LDR to set the right sensitivity—not just change the resistance to 500k ohms.
-[image:12]
+But the road was not always smooth. At one point, one of my circuit builds stopped working. I tested all the components one by one — everything was working. Losing hope, I went to bed. The next morning, I thought: "What if it's not the components—what if it's the wires?" I tested each jumper wire and some of them were broken or had high resistance  (I don't think I'll ever be able to trust jumper wires ever again :(). From then on, I began using "hookup wires".
 
-To control the LED delay, he increased a 100k resistor to 500k, and the delay between each blink changed from 1s to 5s. He also experimented with different capacitors, which further changed the delay. To make this easier, he built his own simulator to predict the delay: https://a64.in/tools/astable-delay-simulator.html
-[image:13]
+Another thing was, I missed having a simulator, so I searched the web and found tinkercad.com has a circuit simulator where you can drag and drop all the components and see if and how it works. It worked for simple circuits, but for mine, the astable multivibrator, it didn't for some reason. I tried falstad.com/circuit; the same thing happened. It also didn't work. I searched the web for the reason, and I've noticed that sometimes these simulators don't work well for complex circuits.
 
-After that, he wanted to verify if his resistor and capacitor values were optimal. He learned how to measure power consumption with a multimeter and discovered that using a lower-value capacitor and higher resistance was best. He then built another tool to calculate how long the circuit could run on a 1.5V AA battery—his calculations predicted 8.1 months. "That's good enough," he thought.
-[image:14]
+One highlight was, the solder smoke. It was causing breathing issues (or atleast I felt difference is breathing after soldering). To help with that, I ripped out a cooler fan from an old CPU and connected with a 12v spare adapter and used it as a fume extractor (or redirector? I don't know what you call it).
 
-But the road was not always smooth. At one point, one of his circuit builds stopped working. He tested all the components one by one—everything was working. Losing hope, he went to bed. The next morning, he thought: "What if it's not the components—what if it's the wires?" He tested each jumper wire and realized that most were broken or had high resistance. (He learned this from Perplexity.) From then on, he began using proper hookup wires.
-[image:15]
+Second highlight was, one mid night, I realized I needed a 22μF capacitor instead of a 10μF. I opened up a broken power supply board. For the first time, it looked familiar. "Ahh.. capacitors, resisotrs and transistors 😂".. I tilted the board left-and-right to find the capacitor number, found one, and carefully desoldered a 22μF capacitor. It felt like magic — free electronics components from broken boards! 
 
-Then another interesting thing happened. One night, he realized he needed a 22μF capacitor instead of a 10μF. For the first time, he opened up a broken power supply board and carefully desoldered a 22μF capacitor. It felt like magic—free electronics components from broken boards!
-[image:16]
+Third highlight of my process was my usual debugging step: putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. That one little blinking light brought me a big sense of joy.
 
-Another highlight was his usual debugging step: putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. This one little blinking light brought a big sense of joy.
-[image:17]
+Mounting everything neatly was another adventure. My freeform circuits constantly toppled over or looked ugly—so I reached for hot glue, tried a cheap 3D pen, and fumbled through DIY “stands.” Ugly looking, but functional. Each new firefly felt more robust than the last.
 
-At one point, to help with solder smoke, he ripped out a cooler fan from an old CPU and used it as a fume extractor—a creative hands-on hack.
-[image:18]
+Eventually, I built five “fireflies” - one on a breadboard for tinkering and tuning, the others soldered together “dead bug” style and sealed in clear covers for the outdoors. The night I saw their gentle blinks line up in the dark, it was pure, peculiar joy. (ohh man!)
 
-Since his circuit was built freeform and powered by a battery, making it stand upright and neat was tricky. He tried using a glue gun, and even a 3D pen to create custom stands. Being inexperienced in these areas, he struggled, his designs looked pretty ugly—but they still worked.
-[image:19]
+I took a pause and looked back… “What am I doing? Why am I so happy and excited?”
+The last time I felt this deeply immersed was when I was learning my first programming language, PHP, 7 or 8 years ago. Now, I realized, I was once again fully absorbed—learning something entirely new, stumbling and getting back up every time I failed. That's what truly gave me a sense of purpose and excitement.
 
-By now, he had built five circuits. One was on a breadboard for tuning and testing. Once satisfied, he assembled the others using "dead bug" or freeform construction. He mounted the finished circuits in waterproof, transparent covers and placed them outside for his first real-world test—they worked, and that was good enough for him.
-[image:20]
-
-He took a pause and looked back… “What am I doing? Why am I so exhilarated?”
-The last time he felt this deeply immersed was when he was learning his first programming language, PHP, 7 or 8 years ago. Now, he realized, he was once again fully absorbed—learning something entirely new, stumbling and getting back up every time he failed. That's what truly gave him a sense of purpose and excitement.
-He thought, I should note this down… this is why I feel so alive when learning and building—falling, but always standing and learning again.
-[image:21]
-
-Now, he’s planning to build more of these “firefly” circuits and keep optimizing their performance.
+I’m already eager to build even better “fireflies,” blinking smarter, shining longer. I don’t know exactly where this all leads, but I know now: the thrill is in the making, the learning and the falling.  
 
 To be continued...
-[image:22]

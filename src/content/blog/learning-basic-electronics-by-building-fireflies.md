@@ -15,6 +15,8 @@ tags:
     - tooling
 ---
 
+> Disclaimer: this post is written in a raw, unstructured, real-time format and celebrates small wins, honest mistakes, and the messy process of learning and building. It's not the ultimate guide - just what worked for me, shared as-is. If you like seeing how things break and get fixed, you're in the right place!
+
 ![alt text](9f82a046ec3d9d73e5ff321148b55bc8eba02f87.png)
 
 I love fireflies. But in recent years, they stopped coming for reasons I don't know. No tiny, glowing dots in the dark like they used to. I miss them more than I expected.

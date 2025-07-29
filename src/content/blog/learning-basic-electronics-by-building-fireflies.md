@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2025-07-29T15:00:00+00:00
-modDatetime: 2025-07-29T15:00:00+00:00
+pubDatetime: 2025-07-28T00:00:00+00:00
+modDatetime: 2025-07-28T00:00:00+00:00
 title: Learning Basic Electronics By Building FireFlies
 slug: 
     learning-basic-electronics-by-building-fireflies
@@ -17,7 +17,7 @@ tags:
 
 > Disclaimer: this post is written in a raw, unstructured, real-time format and celebrates small wins, honest mistakes, and the messy process of learning and building. It's not the ultimate guide - just what worked for me, shared as-is. If you like seeing how things break and get fixed, you're in the right place!
 
-![alt text](9f82a046ec3d9d73e5ff321148b55bc8eba02f87.png)
+![boy sitting outside and watching fireflies](9f82a046ec3d9d73e5ff321148b55bc8eba02f87.png)
 
 I love fireflies. But in recent years, they stopped coming for reasons I don't know. No tiny, glowing dots in the dark like they used to. I miss them more than I expected.
 
@@ -45,7 +45,7 @@ It did NOT work! I realized I connected it wrong (my bad, Perplexity’s bad, or
 
 To fine-tune the blink delay, I discovered I can tweak the capacitor and resistor values. But trying resistors one by one felt like a boring task. I discovered something called a Potentiometer that's more like a dynamic resistor that has a knob you can twist to increase and decrease the resistance. Guess what? Took the bike, bought it, connected it, and found the sweet spot. I swapped out a 100kΩ resistor for the sweet spot 500kΩ and noticed the interval between blinks stretched from 1 to 5 seconds. I experimented with different capacitor values also and, after a lot of trial and error, even built my own little web-based simulator to predict blink delays -> https://a64.in/tools/astable-delay-simulator.html (I guess the software guy in me couldn't rest!). 
 
-![alt text](image-53.png)
+![astable simulator](image-53.png)
 
 After that, I wanted to verify if my resistor and capacitor values were optimal. I learned how to measure power consumption with a multimeter and discovered that using a lower-value capacitor and higher resistance was best. I built another calculator ,https://a64.in/tools/battery-life-calculator.html, to estimate how long my “firefly” would glow before the battery died — it showed over ~8 months, by my math. 
 
@@ -63,28 +63,29 @@ But the road was not always smooth 🥲
 
 **Incident#3:** The solder smoke. It was causing breathing issues (or at least I felt a difference in breathing after soldering). To help with that, I ripped out a cooler fan from an old CPU and connected it with a 12v spare adapter and used it as a fume extractor (or redirector? I don't know what you call it).
 
-![alt text](image-57.png)
+![cooler fan connected to 12v](image-57.png)
 
-![](fumes.mp4.gif)
+![fumes going into the fan](fumes.mp4.gif)
 
 
 **Incident#4:** One midnight, I realized I needed a 22μF capacitor instead of a 10μF. I opened up a broken power supply board. For the first time, it looked familiar. "Ahh.. capacitors, resistors and transistors 😂".. I tilted the board left-and-right to find the capacitor number, found one, and carefully desoldered a 22μF capacitor. It felt like magic — free electronics components from broken boards! 
 
-![alt text](image-47.png)
+![broken power supply inside](image-47.png)
 
 **Incident#5**: Debugging Step: Putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. That one little blinking light brought me a big sense of joy.
 
 Mounting everything neatly was another adventure. My freeform circuits constantly toppled over or looked ugly—so I reached for hot glue, tried a cheap 3D pen, and fumbled through DIY “stands.” Ugly looking, but functional. Each new firefly felt more robust than the last.
 
-![alt text](image-48.png)
+![3D pen drawn stand](image-48.png)
 
 Eventually, I built five “fireflies” - one on a breadboard for tinkering and tuning, the others soldered together “dead bug” style and sealed in clear covers for the outdoors. 
 
-![alt text](image-49.png)
+![circuits in cover](image-49.png)
 
 The night I saw their gentle blinks line up in the dark, it was pure, peculiar joy. (ohh man!)
 
 ![fire](firefly-outdoor.gif)
+![demo-2](firefly-demo-2.gif)
 
 I took a pause and looked back… “What am I doing? Why am I so happy and excited?”
 The last time I felt this deeply immersed was when I was learning my first programming language, PHP, 7 or 8 years ago. Now, I realized, I was once again fully absorbed—learning something entirely new, stumbling and getting back up every time I failed. That's what truly gave me a sense of purpose and excitement.

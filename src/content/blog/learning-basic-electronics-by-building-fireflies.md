@@ -8,7 +8,7 @@ slug:
 featured: true
 draft: false
 description: 
-    Journey from missing real fireflies to learning basic electronics and building my own blinking "fireflies"
+    From missing real fireflies to learning basic electronics and building my own blinking "fireflies"
 tags:
     - eletronics
     - circuit
@@ -16,11 +16,14 @@ tags:
 ---
 
 ![alt text](9f82a046ec3d9d73e5ff321148b55bc8eba02f87.png)
-I love fireflies. But in recent years, they stopped coming for reasons I don't know. No tiny, glowing dots in the dark like they used to. I miss them more than I expected 😔
 
-One day I decided to make my own fireflies. I discovered something called an Astable Multivibrator. It looked like magic to me TBH. A tiny circuit, with minimal components, that could automatically switch from ON to OFF and OFF to ON state (without an explicit "timer" component). 
+I love fireflies. But in recent years, they stopped coming for reasons I don't know. No tiny, glowing dots in the dark like they used to. I miss them more than I expected.
 
-But there was one big problem: I didn’t know the first thing about electronics, not even the difference between voltage and current. Plus, now I needed to learn what a resistor, a capacitor, and a transistor is. It was slow going, but step by step, I picked up the basics. I kept asking AI tools with my questions—sometimes embarrassingly simple ones and slowly, the fog began to lift 😇
+Few weeks ago, I decided to make my own fireflies. I discovered something called an [Astable Multivibrator](https://www.electronics-tutorials.ws/waveforms/astable.html). It looked like magic to me TBH. A tiny circuit, with **minimal** components, that could automatically switch from ON to OFF and OFF to ON state (without an explicit "timer" component). 
+
+But there was one big problem: I didn’t know the first thing about electronics, not even the difference between voltage and current. Plus, now I needed to learn what a resistor, a capacitor, and a transistor is. 
+
+It was slow going, but step by step, I picked up the basics. I kept asking AI tools with my questions—sometimes embarrassingly simple ones and slowly, the fog began to lift 😇
 
 ![one of my first conversations with Perplexity AI about the circuit](image-46.png)
 
@@ -28,7 +31,7 @@ Loaded with just enough theory (and a lot of YouTube and AI advice), I took my b
 
 ![components](image-56.png)
 
-Back at home, I assembled my first blinking LED circuit. To my surprise, it worked on the first try!! (even softwares don't do this, IYKYK). 
+Back at home, I assembled my first blinking LED circuit. To my surprise, it worked on the first try!! (even softwares don't do this, IYKYK 🤷🏼‍♂️). 
 
 ![first version of firefly](v1-firefly.gif)
 

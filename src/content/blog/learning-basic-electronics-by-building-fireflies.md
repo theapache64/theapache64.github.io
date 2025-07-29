@@ -24,7 +24,11 @@ But there was one big problem: I didn’t know the first thing about electronics
 
 ![one of my first conversations with Perplexity AI about the circuit](image-46.png)
 
-Loaded with just enough theory (and a lot of YouTube and AI advice), I took my bike with a shopping list in my pocket and bought my first few components. Back at home, I assembled my first blinking LED circuit. To my surprise, it worked on the first try!! (even softwares don't do this, IYKYK). 
+Loaded with just enough theory (and a lot of YouTube and AI advice), I took my bike with a shopping list in my pocket and bought my first few components. 
+
+![components](image-56.png)
+
+Back at home, I assembled my first blinking LED circuit. To my surprise, it worked on the first try!! (even softwares don't do this, IYKYK). 
 
 ![first version of firefly](v1-firefly.gif)
 
@@ -42,32 +46,28 @@ After that, I wanted to verify if my resistor and capacitor values were optimal.
 
 ![alt text](image-52.png)
 
-But the road was not always smooth. 
+But the road was not always smooth 🥲 
 
-**Incident#1:** My circuit stopped working. I tested all the components one by one — everything was working. Losing hope, I went to bed. The next morning, I thought: "What if it's not the components—what if it's the wires?" I tested each jumper wire and some of them were broken or had high resistance  (I don't think I'll ever be able to trust jumper wires ever again :(). From then on, I began using "hookup wires".
 **Incident#1:** My circuit stopped working. I tested all the components one by one — everything was working. Losing hope, I went to bed. The next morning, I thought: "What if it's not the components—what if it's the wires?" I tested each jumper wire and some of them were broken or had high resistance (I don't think I'll ever be able to trust jumper wires ever again :(). From then on, I began using "hookup wires".
 
 ![switched from jumper wires to hook up wires](image-51.png)
 
+**Incident#2:** I missed having a simulator, so I searched the web and found tinkercad.com has a circuit simulator where you can drag and drop all the components and see if and how it works. It worked for simple circuits, but for mine, the astable multivibrator, it didn't for some reason. I tried [falstad.com/circuit](https://tinyurl.com/2avzjyyn); the same thing happened. It also didn't work. I searched the web for the reason, and I've noticed that sometimes these simulators don't work well for complex circuits.
 
-**Incident#2:** I missed having a simulator, so I searched the web and found tinkercad.com has a circuit simulator where you can drag and drop all the components and see if and how it works. It worked for simple circuits, but for mine, the astable multivibrator, it didn't for some reason. I tried falstad.com/circuit; the same thing happened. It also didn't work. I searched the web for the reason, and I've noticed that sometimes these simulators don't work well for complex circuits.
-**Incident#2:** I missed having a simulator, so I searched the web and found tinkercad.com has a circuit simulator where you can drag and drop all the components and see if and how it works. It worked for simple circuits, but for mine, the astable multivibrator, it didn't for some reason. I tried falstad.com/circuit; the same thing happened. It also didn't work. I searched the web for the reason, and I've noticed that sometimes these simulators don't work well for complex circuits.
+![falstad circuit](image-55.png)
 
-
-**Incident#3:** The solder smoke. It was causing breathing issues (or atleast I felt difference is breathing after soldering). To help with that, I ripped out a cooler fan from an old CPU and connected with a 12v spare adapter and used it as a fume extractor (or redirector? I don't know what you call it).
 **Incident#3:** The solder smoke. It was causing breathing issues (or at least I felt a difference in breathing after soldering). To help with that, I ripped out a cooler fan from an old CPU and connected it with a 12v spare adapter and used it as a fume extractor (or redirector? I don't know what you call it).
+
+![alt text](image-57.png)
 
 ![](fumes.mp4.gif)
 
 
-**Incident#4:** One mid night, I realized I needed a 22μF capacitor instead of a 10μF. I opened up a broken power supply board. For the first time, it looked familiar. "Ahh.. capacitors, resisotrs and transistors 😂".. I tilted the board left-and-right to find the capacitor number, found one, and carefully desoldered a 22μF capacitor. It felt like magic — free electronics components from broken boards! 
 **Incident#4:** One midnight, I realized I needed a 22μF capacitor instead of a 10μF. I opened up a broken power supply board. For the first time, it looked familiar. "Ahh.. capacitors, resistors and transistors 😂".. I tilted the board left-and-right to find the capacitor number, found one, and carefully desoldered a 22μF capacitor. It felt like magic — free electronics components from broken boards! 
 
 ![alt text](image-47.png)
 
-**Incident#4**: Debugging Step: Putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. That one little blinking light brought me a big sense of joy.
 **Incident#5**: Debugging Step: Putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. That one little blinking light brought me a big sense of joy.
-
 
 Mounting everything neatly was another adventure. My freeform circuits constantly toppled over or looked ugly—so I reached for hot glue, tried a cheap 3D pen, and fumbled through DIY “stands.” Ugly looking, but functional. Each new firefly felt more robust than the last.
 

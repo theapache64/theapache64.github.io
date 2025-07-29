@@ -32,9 +32,9 @@ But somethings still bugged me. One, it blinks all day. Two, the LED blinked too
 
 I wanted my firefly to only blink at night and slow down the blinking. The first part wud also cut the energy consumption by half. I asked my first question: "How can I make it blink only at night?" Perplexity introduced me to the LDR (Light Dependent Resistor). I was mind-blown. That’s exactly what I needed. I couldn't believe it. It sounded like AI hallucination to me at that time TBH. Just to be sure, I checked if LDRs are real. They are! I jumped on my bike and rushed to the shop again. Got few. Soldered one into my circuit.
 
-It did NOT work! I realized I connected it wrong (my bad, Perplexity’s bad, or maybe we both 🤷🏼‍♂️). Once I hooked it up correctly, it was like magic: the LED would stay ON only in the dark. Even better, I learned I could adjust the sensitivity by adding an resistor in series with the LDR.
+It did NOT work! I realized I connected it wrong (my bad, Perplexity’s bad, or maybe we both 🤷🏼‍♂️). Once I hooked it up correctly, it was like magic: the LED would stay ON only in the dark. Even better, I learned I could adjust the sensitivity by adding a resistor in series with the LDR.
 
-To fine-tune the blink delay, I discovered I can tweak with the capacitor and resistor values. But trying resistors one by one felt like a boring task. I disovered something called a Potentiometer that's more like a dynamic resistor that you has a knob you can twist to increase and decrease the resistance. Guess what? Took the bike, bought it, connected it, and found the sweet spot. I swapped out a 100kΩ resistor for the sweet spot 500kΩ and noticed the interval between blinks stretched from 1 to 5 seconds. I experimented with different capacitor values also and, after a lot of trial and error, even built my own little web-based simulator to predict blink delays -> https://a64.in/tools/astable-delay-simulator.html (I guess the software guy in me couldn't rest!). 
+To fine-tune the blink delay, I discovered I can tweak the capacitor and resistor values. But trying resistors one by one felt like a boring task. I discovered something called a Potentiometer that's more like a dynamic resistor that has a knob you can twist to increase and decrease the resistance. Guess what? Took the bike, bought it, connected it, and found the sweet spot. I swapped out a 100kΩ resistor for the sweet spot 500kΩ and noticed the interval between blinks stretched from 1 to 5 seconds. I experimented with different capacitor values also and, after a lot of trial and error, even built my own little web-based simulator to predict blink delays -> https://a64.in/tools/astable-delay-simulator.html (I guess the software guy in me couldn't rest!). 
 
 ![alt text](image-53.png)
 
@@ -45,23 +45,28 @@ After that, I wanted to verify if my resistor and capacitor values were optimal.
 But the road was not always smooth. 
 
 **Incident#1:** My circuit stopped working. I tested all the components one by one — everything was working. Losing hope, I went to bed. The next morning, I thought: "What if it's not the components—what if it's the wires?" I tested each jumper wire and some of them were broken or had high resistance  (I don't think I'll ever be able to trust jumper wires ever again :(). From then on, I began using "hookup wires".
+**Incident#1:** My circuit stopped working. I tested all the components one by one — everything was working. Losing hope, I went to bed. The next morning, I thought: "What if it's not the components—what if it's the wires?" I tested each jumper wire and some of them were broken or had high resistance (I don't think I'll ever be able to trust jumper wires ever again :(). From then on, I began using "hookup wires".
 
 ![switched from jumper wires to hook up wires](image-51.png)
 
 
 **Incident#2:** I missed having a simulator, so I searched the web and found tinkercad.com has a circuit simulator where you can drag and drop all the components and see if and how it works. It worked for simple circuits, but for mine, the astable multivibrator, it didn't for some reason. I tried falstad.com/circuit; the same thing happened. It also didn't work. I searched the web for the reason, and I've noticed that sometimes these simulators don't work well for complex circuits.
+**Incident#2:** I missed having a simulator, so I searched the web and found tinkercad.com has a circuit simulator where you can drag and drop all the components and see if and how it works. It worked for simple circuits, but for mine, the astable multivibrator, it didn't for some reason. I tried falstad.com/circuit; the same thing happened. It also didn't work. I searched the web for the reason, and I've noticed that sometimes these simulators don't work well for complex circuits.
 
 
 **Incident#3:** The solder smoke. It was causing breathing issues (or atleast I felt difference is breathing after soldering). To help with that, I ripped out a cooler fan from an old CPU and connected with a 12v spare adapter and used it as a fume extractor (or redirector? I don't know what you call it).
+**Incident#3:** The solder smoke. It was causing breathing issues (or at least I felt a difference in breathing after soldering). To help with that, I ripped out a cooler fan from an old CPU and connected it with a 12v spare adapter and used it as a fume extractor (or redirector? I don't know what you call it).
 
 ![](fumes.mp4.gif)
 
 
 **Incident#4:** One mid night, I realized I needed a 22μF capacitor instead of a 10μF. I opened up a broken power supply board. For the first time, it looked familiar. "Ahh.. capacitors, resisotrs and transistors 😂".. I tilted the board left-and-right to find the capacitor number, found one, and carefully desoldered a 22μF capacitor. It felt like magic — free electronics components from broken boards! 
+**Incident#4:** One midnight, I realized I needed a 22μF capacitor instead of a 10μF. I opened up a broken power supply board. For the first time, it looked familiar. "Ahh.. capacitors, resistors and transistors 😂".. I tilted the board left-and-right to find the capacitor number, found one, and carefully desoldered a 22μF capacitor. It felt like magic — free electronics components from broken boards! 
 
 ![alt text](image-47.png)
 
 **Incident#4**: Debugging Step: Putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. That one little blinking light brought me a big sense of joy.
+**Incident#5**: Debugging Step: Putting the finished circuit in a dark room and looking from far away to see if it really looked like a firefly. That one little blinking light brought me a big sense of joy.
 
 
 Mounting everything neatly was another adventure. My freeform circuits constantly toppled over or looked ugly—so I reached for hot glue, tried a cheap 3D pen, and fumbled through DIY “stands.” Ugly looking, but functional. Each new firefly felt more robust than the last.

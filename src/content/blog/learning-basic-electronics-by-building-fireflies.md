@@ -92,6 +92,8 @@ The last time I felt this deeply immersed was when I was learning my first progr
 
 ![current version](image-54.png)
 
+- Schematics: https://tinyurl.com/2avzjyyn
+
 I’m already eager to build even better “fireflies,” blinking smarter, shining longer. I don’t know exactly where this all leads, but I know now: the thrill is in the making, the learning and the falling.  
 
 To be continued...

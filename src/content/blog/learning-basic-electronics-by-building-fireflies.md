@@ -41,7 +41,11 @@ But somethings still bugged me. One, it blinks all day. Two, the LED blinked too
 
 I wanted my firefly to only blink at night and slow down the blinking. The first part wud also cut the energy consumption by half. I asked my first question: "How can I make it blink only at night?" Perplexity introduced me to the LDR (Light Dependent Resistor). I was mind-blown. That’s exactly what I needed. I couldn't believe it. It sounded like AI hallucination to me at that time TBH. Just to be sure, I checked if LDRs are real. They are! I jumped on my bike and rushed to the shop again. Got few. Soldered one into my circuit.
 
-It did NOT work! I realized I connected it wrong (my bad, Perplexity’s bad, or maybe we both 🤷🏼‍♂️). Once I hooked it up correctly, it was like magic: the LED would stay ON only in the dark. Even better, I learned I could adjust the sensitivity by adding a resistor in series with the LDR.
+It did NOT work! I realized I connected it wrong (my bad, Perplexity’s bad, or maybe we both 🤷🏼‍♂️). Once I hooked it up correctly, it was like magic: the LED would stay ON only in the dark. 
+
+![](glow-demo.mp4.gif)
+
+Even better, I learned I could adjust the sensitivity by adding a resistor in series with the LDR.
 
 To fine-tune the blink delay, I discovered I can tweak the capacitor and resistor values. But trying resistors one by one felt like a boring task. I discovered something called a Potentiometer that's more like a dynamic resistor that has a knob you can twist to increase and decrease the resistance. Guess what? Took the bike, bought it, connected it, and found the sweet spot. I swapped out a 100kΩ resistor for the sweet spot 500kΩ and noticed the interval between blinks stretched from 1 to 5 seconds. I experimented with different capacitor values also and, after a lot of trial and error, even built my own little web-based simulator to predict blink delays -> https://a64.in/tools/astable-delay-simulator.html (I guess the software guy in me couldn't rest!). 
 

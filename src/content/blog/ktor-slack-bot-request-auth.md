@@ -3,20 +3,19 @@ author: theapache64
 pubDatetime: 2024-09-14T00:00:00+05:30
 modDatetime: 2024-09-14T18:25:00+05:30
 title: How to protect your Ktor Slack bot
-slug: 
-    how-to-protect-your-ktor-slack-bot
+slug: how-to-protect-your-ktor-slack-bot
 featured: false
 draft: false
-description: 
-    A how-to guide on how to protect HTTP-based Ktor Slack bot (using HMAC)
+description: A how-to guide on how to protect HTTP-based Ktor Slack bot (using HMAC)
 tags:
-    - ktor
-    - slack-bot
-    - oauth
+  - ktor
+  - slack-bot
+  - oauth
 ---
 
 ## Problem Statement
-While writing a backend for an HTTP-based Slack bot, you might want to verify that the request comes from Slack and not from somebody trying to spam your service. To do this, we can use the `X-Slack-Signature` header that comes with the POST request  with the Ktor authentication plugin. Let's see how we can do that
+
+While writing a backend for an HTTP-based Slack bot, you might want to verify that the request comes from Slack and not from somebody trying to spam your service. To do this, we can use the `X-Slack-Signature` header that comes with the POST request with the Ktor authentication plugin. Let's see how we can do that
 
 - Versions we'll be using in this guide
 
@@ -27,7 +26,6 @@ id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
 ```
 
 ## Step 1 : Add auth module
-
 
 - first add these dependencies to your `build.gradle.kts`
 
@@ -169,6 +167,7 @@ fun Application.configureRouting() {
     }
 }
 ```
+
 and thats it 🤷‍♂️
 
 ### Credits

@@ -3,63 +3,62 @@ author: theapache64
 pubDatetime: 2024-10-19T00:00:00+05:30
 modDatetime: 2024-10-20T00:23:25+05:30
 title: That Weird Compose Crash
-slug: 
-    that-weird-compose-crash
+slug: that-weird-compose-crash
 featured: true
 draft: false
-description: 
-    One day, while debugging a weird crash in Compose ConstraintLayout...
+description: One day, while debugging a weird crash in Compose ConstraintLayout...
 tags:
-    - compose
-    - crash
-    - debugging
+  - compose
+  - crash
+  - debugging
 ---
 
 ## 📄 Disclaimer
 
-This blog is intentionally unpolished. I wrote it directly from my thoughts, so it may include some unnecessary or awkward sentences, but I chose to leave them in. The rawness is part of its purpose. 
+This blog is intentionally unpolished. I wrote it directly from my thoughts, so it may include some unnecessary or awkward sentences, but I chose to leave them in. The rawness is part of its purpose.
 
 ## 📗 Context
 
 At work, I get to work on a lot of interesting issues. And there were too many interesting stories to tell, which I don't remember fully enough to write as a blog now. So I was thinking of documenting my next debugging session while I debug and this is _that_ blog.
 
- At this point, I have a crash in my hand that looks weird (i think most crash at the initial stage looks weird and here's am no difference).
-  So let's debug together. 
+At this point, I have a crash in my hand that looks weird (i think most crash at the initial stage looks weird and here's am no difference).
+So let's debug together.
 
 ## 💥 Crash
 
 My teammate is currently trying to update our [Jetpack Compose](https://developer.android.com/compose) version from `1.5.x` to `1.7.x` (yeah, that's a long jump). Today, he mentioned that he got a crash. He was saying the app works in one region (let's call it `R1`) and crashes in the other region (let's call it `C1` - `C` stands for crash). He share a stack trace and it looks like this:
 
- ```
- Fatal Exception: java.lang.IllegalStateException: Size(0 x 2147483647) is out of range. Each dimension must be between 0 and 16777215.
-    androidx.compose.ui.node.LookaheadCapablePlaceable.layout (LookaheadCapablePlaceable.java:2)
-    androidx.compose.ui.layout.MeasureScope.layout$default (MeasureScope.java:4)
-    androidx.compose.ui.layout.MeasureScope$DefaultImpls.layout$default (MeasureScope.java:52)
-    androidx.constraintlayout.compose.ConstraintLayoutKt$rememberConstraintLayoutMeasurePolicy$1$measurePolicy$1.measure-3p2s80s (ConstraintLayout.kt:52)
-    androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0 (InnerNodeCoordinator.java:13)
-    androidx.compose.foundation.layout.FillNode.C (FillNode.java:98)
-    androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0 (LayoutModifierNodeCoordinator.java:6)
-    androidx.compose.foundation.layout.AspectRatioNode.measure-3p2s80s (AspectRatioNode.java:18)
-    ...
 ```
-He also spotted it in the Google issue tracker : https://issuetracker.google.com/issues/335524398 
+Fatal Exception: java.lang.IllegalStateException: Size(0 x 2147483647) is out of range. Each dimension must be between 0 and 16777215.
+   androidx.compose.ui.node.LookaheadCapablePlaceable.layout (LookaheadCapablePlaceable.java:2)
+   androidx.compose.ui.layout.MeasureScope.layout$default (MeasureScope.java:4)
+   androidx.compose.ui.layout.MeasureScope$DefaultImpls.layout$default (MeasureScope.java:52)
+   androidx.constraintlayout.compose.ConstraintLayoutKt$rememberConstraintLayoutMeasurePolicy$1$measurePolicy$1.measure-3p2s80s (ConstraintLayout.kt:52)
+   androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0 (InnerNodeCoordinator.java:13)
+   androidx.compose.foundation.layout.FillNode.C (FillNode.java:98)
+   androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0 (LayoutModifierNodeCoordinator.java:6)
+   androidx.compose.foundation.layout.AspectRatioNode.measure-3p2s80s (AspectRatioNode.java:18)
+   ...
+```
 
-Based on the stack trace, the crash is happening from the `ConstraintLayout` library. So, he updated the version to the latest stable, which is `1.1.0-rc01`, and the crash is fixed. 
+He also spotted it in the Google issue tracker : https://issuetracker.google.com/issues/335524398
+
+Based on the stack trace, the crash is happening from the `ConstraintLayout` library. So, he updated the version to the latest stable, which is `1.1.0-rc01`, and the crash is fixed.
 
 This is what we usually do when an unexpected crash occurs. We update the dependency or the class causing the crash and try it again without even looking at the code, because historically speaking, the time spent debugging these issues never ended up with a happy ending.
 
-But, this time, with that _region_ part involved, I got curious about what might be the reason for such a crash. What's interesting is that both regions run on the same codebase. So any UI crash present in one region should ideally be present in the other region as well. This is puzzling because this is something that should not have happened based on the structure of the code. 
+But, this time, with that _region_ part involved, I got curious about what might be the reason for such a crash. What's interesting is that both regions run on the same codebase. So any UI crash present in one region should ideally be present in the other region as well. This is puzzling because this is something that should not have happened based on the structure of the code.
 
-Please note my goal with this blog is to explore the issue as much as I can within the _limited time_ I have. Since the solution is already available and I can't spend too much time digging deeper on this. 
+Please note my goal with this blog is to explore the issue as much as I can within the _limited time_ I have. Since the solution is already available and I can't spend too much time digging deeper on this.
 
- ## 🪲 Reproducing
- 
+## 🪲 Reproducing
+
 The first step of any crash is reproducing it. Let me switch my VPN to `C1` and see if I can reproduce the crash
 (checking...)
 YES! it crashed
 
- ```
- FATAL EXCEPTION: main
+```
+FATAL EXCEPTION: main
 Process: com.myapp, PID: 18074
 java.lang.IllegalStateException: Size(992 x 2147483647) is out of range. Each dimension must be between 0 and 16777215.
 	at androidx.compose.ui.internal.InlineClassHelperKt.throwIllegalStateException(InlineClassHelper.kt:26)
@@ -89,7 +88,7 @@ Now let me switch to `R1` and verify it's not crashing...
 
 Verified. It's not crashing!! This is truly interesting.
 
-## 📜 The Stacktrace 
+## 📜 The Stacktrace
 
 Now let's look at the stacktrace and see what its telling.
 
@@ -99,15 +98,15 @@ Now let's look at the stacktrace and see what its telling.
 
 ![google search for 2147483647](image-21.png)
 
-ohh that's our `Int.MAX_VALUE` and what about `16777215` ? 
+ohh that's our `Int.MAX_VALUE` and what about `16777215` ?
 
 ![google search for 16777215](image-22.png)
 
 > The number 16,777,215 is the total possible combinations of RGB(255,255,255) which is 32 bit colour.
 
-Hmm... how come dimension and color collided together? 🤔 Or are these numbers not what I think they are? 🤷🏼‍♂️ 
+Hmm... how come dimension and color collided together? 🤔 Or are these numbers not what I think they are? 🤷🏼‍♂️
 
-Let's check the file it got triggered from - thanks to modern IDEs - we can navigate from stacktrace to library files directy. So that's `InlineClassHelper.kt:26`, to be precise `androidx.compose.ui.internal.InlineClassHelper.kt` at line no `26`. 
+Let's check the file it got triggered from - thanks to modern IDEs - we can navigate from stacktrace to library files directy. So that's `InlineClassHelper.kt:26`, to be precise `androidx.compose.ui.internal.InlineClassHelper.kt` at line no `26`.
 
 There we go
 
@@ -119,7 +118,7 @@ That looks like a utility function to throw an exception. The actual call came f
 
 That's where the crash message gets constructed, and `16777215` is not a color here, but an upper limit of `16 million`. So it's not actually some collision between dimension and color. This looks like the `ConstraintLayout` tried to draw out of where it's supposed to be.
 
-I think what may have happened is, at some point `ConstraintLayout` passed `Int.MAX_VALUE` for `height`, which was compatible previously. This check, which is probably introduced in the recent version of `LookaheadDelegate`, which is in a in a different Compose dependency, was transitively upgraded during the `1.7.x` update — probably caused the crash. 
+I think what may have happened is, at some point `ConstraintLayout` passed `Int.MAX_VALUE` for `height`, which was compatible previously. This check, which is probably introduced in the recent version of `LookaheadDelegate`, which is in a in a different Compose dependency, was transitively upgraded during the `1.7.x` update — probably caused the crash.
 
 Now we somewhat know how the crash is happening! but our primary question stays the same. **How come same code has different behaviour in different region**. My best guess, at this point, is that it's not the same code. There might be some `ConstraintLayout` code which gets triggered only in the `C1` region, which is crashing for `C1`, and that never gets called in `R1`.
 
@@ -143,7 +142,7 @@ Is there any way I can put breakpoints on all 45 instances with just one click? 
 
 ![alt text](image-36.png)
 
-and looks like there's only one instance.. (feeling lucky).. let's see if its behind a region check or something like that... 
+and looks like there's only one instance.. (feeling lucky).. let's see if its behind a region check or something like that...
 
 (checking...)
 
@@ -159,7 +158,7 @@ And after `F9` (continue), it crashed as expected. So this ConstraintLayout is i
 
 (checking)
 
-NOT CRASHING!!! That's a great news! We have our culprit in hand.. now.. lets find "WHY" ? Is this caused by the children in the CL (ConstraintLayout) or its just the `CL`. let's remove all the children and see if its crashing...  
+NOT CRASHING!!! That's a great news! We have our culprit in hand.. now.. lets find "WHY" ? Is this caused by the children in the CL (ConstraintLayout) or its just the `CL`. let's remove all the children and see if its crashing...
 
 ```kotlin
 ConstraintLayout(
@@ -189,8 +188,7 @@ This is crashing without any external input from my side, so it's mostly a frame
 
 Not crashing!! Oh my god!! What the hell!
 
-
-How about just one level up? 
+How about just one level up?
 
 (checking)
 
@@ -239,17 +237,16 @@ Column(
 
 crashed!! there we go! so the crash happens when `ConstraintLayout` comes in a `Column` with a `fillMaxSize()` modifier and I think there's nothing we can do about this...
 
-Now, let's go  back to our main question.. why only `C1`, why not `R1`? Isn't  `DecorateLoginScreen` not getting executed in the `R1`? but there's no region check or anything as such... why its crashing only in `C1`... lets put some logs just above the `CL` and see if its getting triggered in `R1`
+Now, let's go back to our main question.. why only `C1`, why not `R1`? Isn't `DecorateLoginScreen` not getting executed in the `R1`? but there's no region check or anything as such... why its crashing only in `C1`... lets put some logs just above the `CL` and see if its getting triggered in `R1`
 
 (checking)
 
 ![alt text](image-38.png)
 
-
-Its getting triggered, but doesn't crash! in `R1`! SUPER WEIRD! 
+Its getting triggered, but doesn't crash! in `R1`! SUPER WEIRD!
 
 At this point, I've already timed out (almost twice). This is one of those framework crashes that doesn't make sense at all to me. Of course, there could be a reason within the framework, but it's not worth debugging it further for me as my app is not violating any Compose rules and the fix is already there. This is where I have to force myself to stop debugging this.
 
-##  🙏🏼 Concluding
+## 🙏🏼 Concluding
 
 To be honest, I thought we'd find some concrete reason, like some region checks happening deep inside the code or some country code related stuff as mentioned above, but it turned out to be another framework crash 😄

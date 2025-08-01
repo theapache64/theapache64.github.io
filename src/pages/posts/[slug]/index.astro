@@ -37,20 +37,26 @@ const pagination = getPagination({
   page: slug,
 });
 ---
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Google tag (gtag.js) -->
-      <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-RVMGGB9DLQ"></script>
-      <script type="text/partytown">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);} // eslint-disable-line no-undef
-        gtag('js', new Date());
 
-        gtag('config', 'G-RVMGGB9DLQ');
-      </script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RVMGGB9DLQ"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      } // eslint-disable-line no-undef
+      gtag("js", new Date());
+
+      gtag("config", "G-RVMGGB9DLQ");
+    </script>
   </head>
-</html> 
+</html>
 
 {post ? <PostDetails post={post} /> : <Posts {...pagination} />}

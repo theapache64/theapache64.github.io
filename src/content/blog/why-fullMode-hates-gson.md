@@ -2,33 +2,32 @@
 author: theapache64
 pubDatetime: 2024-09-24T00:00:00+05:30
 modDatetime: 2024-09-24T00:00:00+05:30
-title: Why fullMode hates Gson so much? 
-slug: 
-    why-fullMode-hates-gson-so-much
+title: Why fullMode hates Gson so much?
+slug: why-fullMode-hates-gson-so-much
 featured: true
 draft: false
-description: 
-    When fullMode is enabled, some of the Gson usage crash the app. This is an investigation into how and why it happens.
+description: When fullMode is enabled, some of the Gson usage crash the app. This is an investigation into how and why it happens.
 tags:
-    - r8
-    - fullMode
-    - gson
+  - r8
+  - fullMode
+  - gson
 ---
 
 ![Guy smoking while two people fight meme themed to fullMode and Gson](image-15.png)
 
 ## 🙏 Disclaimer
 
-Am starting to write this blog with a curious mind to understand why Gson started crashing after `fullMode` is enabled in a working `release` build. I can guess it could be because of Gson's reflection usage and somehow `fullMode` modified or removed something, but let's understand what's the exact change. This analysis is not about <i>"adding an extra rule should fix it"</i>. Its more about "</i>how an app which is running fine with `fullMode = false` breaks when `fullMode` set to `true`</i> 
+Am starting to write this blog with a curious mind to understand why Gson started crashing after `fullMode` is enabled in a working `release` build. I can guess it could be because of Gson's reflection usage and somehow `fullMode` modified or removed something, but let's understand what's the exact change. This analysis is not about <i>"adding an extra rule should fix it"</i>. Its more about "</i>how an app which is running fine with `fullMode = false` breaks when `fullMode` set to `true`</i>
 
 ## 📗 Context
-A little bit of context if you're hearing `fullMode` or `r8` for the first time. 
+
+A little bit of context if you're hearing `fullMode` or `r8` for the first time.
 
 **What's r8?**
 
-R8 is a tool that shrinks, optimizes, and secures Android applications and libraries: 
-Shrinking: R8 removes unused classes, members, and resources to reduce the size of your app. 
-Optimizing: R8 rewrites code to improve performance. 
+R8 is a tool that shrinks, optimizes, and secures Android applications and libraries:
+Shrinking: R8 removes unused classes, members, and resources to reduce the size of your app.
+Optimizing: R8 rewrites code to improve performance.
 
 **What's fullMode?**
 
@@ -92,14 +91,13 @@ and my proguard rules have rules mentioned in the Gson example [here](https://gi
 
 Alrighty, let's go!
 
-As you can see in the `MainActivity`, we're parsing the `JSON` using `Gson#fromJson` and setting the `toString()` value of `data class` to a `TextView` (yeah, XML :P). Simple. 
+As you can see in the `MainActivity`, we're parsing the `JSON` using `Gson#fromJson` and setting the `toString()` value of `data class` to a `TextView` (yeah, XML :P). Simple.
 
 The `release` build with `fullMode = false` works fine
 
 ![](assets/images/image-11.png)
 
-
-but, the app crashes when i run the `release` build with `fullMode = true`. 
+but, the app crashes when i run the `release` build with `fullMode = true`.
 Repro success 💥
 
 The stacktrace looks like this (minified)
@@ -114,7 +112,6 @@ Process: com.example.app, PID: 27357
     at com.example.app.MainActivity.onCreate(SourceFile:218)
     ...
 ```
-
 
 The above stacktrace says the crash happened due to a `ClassCastException` but that usually happens when you try to cast to a wrong class. Here, we have only one model class, and that too parsed with `Car::class.java`. Its not even "dynamic or generic"
 
@@ -148,7 +145,7 @@ After executing the command `dex-diff` will start decompile and diff for each cl
 
 Cool. The report is ready. Let's look at it
 
-## 📜 Report 
+## 📜 Report
 
 ![report file screenshot](image-13.png)
 
@@ -164,17 +161,17 @@ So many interesting things happened in there, but there have been three major ch
 2. Previously used `.read(jsonReader)` became `.mo0read(jsonReader)` 🤔
 3. There's no `TextView` and `TextView#setText` call in `MainActivity` and the area has been replaced with `JsonToken$EnumUnboxingLocalUtility.m(cls.cast(obj));` 😕
 
-Wait, is that the crash point for our crash.. `JsonToken$EnumUnboxingLocalUtility` 🤔.. yeah it is 🫠. So that means, failed at `2` and it went to the `catch` block and crashed at spot `3`. 
+Wait, is that the crash point for our crash.. `JsonToken$EnumUnboxingLocalUtility` 🤔.. yeah it is 🫠. So that means, failed at `2` and it went to the `catch` block and crashed at spot `3`.
 
 ## 📦 What's inside?
 
-Let's see what's inside `SqlTypesSupport.AnonymousClass1.class`? 
+Let's see what's inside `SqlTypesSupport.AnonymousClass1.class`?
 
 (To browse the decompiled code better, I'll be using `jadx`)
 
 ![screenshot of AnonymousClass1 content](image-16.png)
 
-Wow! Its an empty class! and what's inside `JsonToken$EnumUnboxingLocalUtility` 
+Wow! Its an empty class! and what's inside `JsonToken$EnumUnboxingLocalUtility`
 
 ![screesnshot fo EnumUnboxingLocalUtility](image-17.png)
 
@@ -185,19 +182,19 @@ Alright. Now the crash makes sense. I'll tell you how it crashed.
 
 ![screenshot of EOFException usage](image-18.png)
 
-3. Because the parsing failed, the `obj` stays `null` and `cls.cast(obj)` throws `ClassCastException`. Because it was casting to `null`,  and that's why stack trace does not indicate which cast "to" failed. And this exception caused the app to crash.
+3. Because the parsing failed, the `obj` stays `null` and `cls.cast(obj)` throws `ClassCastException`. Because it was casting to `null`, and that's why stack trace does not indicate which cast "to" failed. And this exception caused the app to crash.
 
 ![jadx screenshot of cast call](image-9.png)
 
 ## 🕵️ Analysis : Why it crashed?
 
-Ultimately, the crash happened because `Car` class got replaced with an empty class called `SqlTypesSupport.AnonymousClass1`. 
+Ultimately, the crash happened because `Car` class got replaced with an empty class called `SqlTypesSupport.AnonymousClass1`.
 
 **Why `Car` class got removed?**
 
 Because `Gson` uses reflection to create your model class, and not the class's constructor. `fullMode` couldn't find any constructor usage and it probably thought "<i>`Car` constructor is not getting invoked, that means `Car` class objects are not getting created, that means Car class properties are not getting created, so since `Car.class` code is there, let's replace the usage with an empty class that's already present in the code, i.e., `SqlTypesSupport.AnonymousClass1`"</i>.
 
-To validate this theory, I created another `Car` object manually in `MainActivity`, and the app didn't crash 
+To validate this theory, I created another `Car` object manually in `MainActivity`, and the app didn't crash
 
 > NOTE: This is my best guess from the decompiled APK code. CMIIW
 

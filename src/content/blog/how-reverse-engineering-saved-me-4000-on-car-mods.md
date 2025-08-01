@@ -6,13 +6,13 @@ title: How Reverse Engineering Saved Me ~87% Cost on Car Mods!
 slug: how-reverse-engineering-saved-me-87-percent-on-car-mods
 featured: true
 draft: false
-description: 
-  How I saved ~87% on car mods by reverse engineering a React Native app and modifying it to work with a cheaper OBD2 reader.
+description: How I saved ~87% on car mods by reverse engineering a React Native app and modifying it to work with a cheaper OBD2 reader.
 tags:
   - reverse-engineering
   - cars
   - react native
 ---
+
 > Disclaimer: The information provided is intended for educational purposes only. It should not be considered as professional advice or used for any commercial purposes. Users are encouraged to conduct their own research and consult with relevant experts before making any decisions based on the content provided.
 
 ## Introduction: A Lazy Saturday Discovery
@@ -39,7 +39,7 @@ I jumped onto Amazon.in and searched for “OBD2 reader,” and voila!
 
 Yes, it only cost ₹411, which is roughly $4.95. That’s like ~87% cheaper! Without a second thought, I placed the order and received it within three days.
 
-##  The Excitement and Disappointment
+## The Excitement and Disappointment
 
 ![cheap OBD2 device](https://github.com/user-attachments/assets/5b77fa58-3949-4dbc-8e54-a6a70bb040f7)
 
@@ -104,7 +104,6 @@ The string “OBD11” is familiar, but what is “VEEPEAK”? Curiosity piqued,
 
 ![image](https://github.com/user-attachments/assets/b7574263-fb35-4804-8b30-9587bd35ace7)
 
-
 Ohh, it’s an OBD scanner, and it seems the Wrumer OBD scanner is likely just a rebranded version of the same hardware.
 
 I thought, why not just hardcode these conditions to true, which would accept all devices? Then, I could replace the original index.android.bundle file with my version and repackage the APK.
@@ -127,7 +126,6 @@ First, I replaced the original bundle file with the modified one.
 
 ![ok](https://github.com/user-attachments/assets/8ed814a9-0866-4a6d-8196-75e157df75b2)
 
-
 Next, I changed the title to “Wrumer Mod” to make it easier to distinguish from the original app. Then, I uninstalled the original version from my phone and pressed the “Install” button (see below).
 
 ![image](https://github.com/user-attachments/assets/17688d6b-7294-4947-931f-9abb18e6deee)
@@ -136,13 +134,11 @@ Next, I changed the title to “Wrumer Mod” to make it easier to distinguish f
 
 and its done Done ✅
 
-
 ## Learning from Mistakes
 
 I opened the app, expecting greatness, but all I got was a crash landing. Looks like my coding escapades took a nosedive!
 
 ![image](https://github.com/user-attachments/assets/69aebbea-6776-424a-a99a-b25d66744e4b)
-
 
 Ah, this crash is all too familiar to me from work! 😄 It’s like when you’re missing a puzzle piece — in this case, the split APKs. I only installed the main APK, forgetting about its companions. Time for a reinstallation from the PlayStore to grab both the main and split APKs.
 
@@ -172,14 +168,11 @@ This copies the split APK to the computer and all we need to do is sign with the
 
 ![image](https://github.com/user-attachments/assets/fb6b8fec-160c-4de9-a42e-85941e9e6d7e)
 
-
 ## Successful Installation
 
 Now that we have a signed main APK and a signed split APK, it’s time to install them together. To do this, I used theadb install-multiple command.
 
-
 ![image](https://github.com/user-attachments/assets/b620e2a2-4b34-4307-9164-33d2687e39e1)
-
 
 And voila! No more crashy-crashy for the app! 🎉
 
@@ -194,7 +187,9 @@ Excited me dashed to the car this time! And let me tell you, it was pure magic. 
 With the app finally sorted out, I couldn’t wait to give it a spin. Excitedly, I hopped into my car, fired up the engine, and tapped on the screen. And you know what? It worked like a charm! The revs kicked in, synced perfectly with my ride. It was one of those moments where you just sit back and go, “Yep, that’s how it’s done.” So, off I went, cruising down the road with a big grin on my face. Another day, another tech victory 😜
 
 ## Hardware Performance: Budget vs. Original
+
 The cheap OBD2 reader saved costs, but it came with a slight delay sometimes. Opting for authentic hardware may provide better results. While the cheaper option worked fine for me, users who prioritize performance might benefit from investing in the original [Wrumer](https://us.wrumersound.com/) hardware for a smoother experience, although I haven’t tried it myself.
 
 ## I know what you’re thinking now
+
 I know, I know — the time I spent probably cost more than what I saved. But hey, sometimes, the fun of figuring things out is priceless! IYKYK

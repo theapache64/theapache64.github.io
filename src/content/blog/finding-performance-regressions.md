@@ -3,22 +3,20 @@ author: theapache64
 pubDatetime: 2024-10-26T00:00:00+05:30
 modDatetime: 2024-10-26T00:00:00+05:30
 title: Compose Performance - Finding Regressions
-slug: 
-    finding-performance-regressions
+slug: finding-performance-regressions
 featured: true
 draft: false
-description: 
-    How to find performance regressions in your Jetpack Compose code using Perfetto and Diffetto
+description: How to find performance regressions in your Jetpack Compose code using Perfetto and Diffetto
 tags:
-    - compose
-    - performance
-    - tooling
-    - android
+  - compose
+  - performance
+  - tooling
+  - android
 ---
 
 > Software is like entropy: It is difficult to grasp, weighs nothing, and obeys the Second Law of Thermodynamics; i.e., it always increases.
 
- — Norman Augustine
+— Norman Augustine
 
 ## 📜 Disclaimer
 
@@ -30,15 +28,15 @@ Let's go! 🚀
 
 Every day new code gets added to codebases. New code basically means more need for memory and more time needed to execute. This will eventually reduce the performance of the app if the code is not written carefully. These regressions can be caught in two ways: either proactively (during PR reviews) or reactively (after it reaches your users and when they complain).
 
-To proactively catch performance regression, we can use the [Macrobenchmark](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview) framework. Macrobenchmark  runs the given scenario, _eg launch app, click buttons, scroll etc_, multiple times and produces a statistical summary. This summary tells you a number. A number that you can compare with your previous numbers to check if there's a regression or not. 
+To proactively catch performance regression, we can use the [Macrobenchmark](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview) framework. Macrobenchmark runs the given scenario, _eg launch app, click buttons, scroll etc_, multiple times and produces a statistical summary. This summary tells you a number. A number that you can compare with your previous numbers to check if there's a regression or not.
 
-Then comes the reactive way. In this case, you probably don't have a fancy setup like Macrobenchmark. You only know the new version of the app has  performance regression because either your `Frozen Frame / Slow Frame` numbers shows regression in playstore or your users complaints the app is slow and laggy.
+Then comes the reactive way. In this case, you probably don't have a fancy setup like Macrobenchmark. You only know the new version of the app has performance regression because either your `Frozen Frame / Slow Frame` numbers shows regression in playstore or your users complaints the app is slow and laggy.
 
 In both these scenarios (proactive and reactive), "what" exactly caused the regression is still hard to find, especially when you have hundreds if not thousands of Composables getting rendered in a second.
 
-This blog is NOT about finding "if" there's a regression or not. Rather, this blog focuses on how to find "what" or "which" composable caused the regression, **easily**. 
+This blog is NOT about finding "if" there's a regression or not. Rather, this blog focuses on how to find "what" or "which" composable caused the regression, **easily**.
 
-In this blog, we'll be building an app, adding regressions and comparing the before and after version using [Perfetto](https://ui.perfetto.dev/) and [Diffetto](https://github.com/theapache64/diffetto) 
+In this blog, we'll be building an app, adding regressions and comparing the before and after version using [Perfetto](https://ui.perfetto.dev/) and [Diffetto](https://github.com/theapache64/diffetto)
 
 ## 📗 Context
 
@@ -52,12 +50,12 @@ Perfetto is a web based tool to visualize and explore trace files. It offers ser
 
 Diffetto is a tiny tool I wrote to diff two Perfetto traces. We'll see how to use it in this blog.
 
-
 ## 📱 The App
 
 To make this blog simpler, I am going to write a `Counter` composable without a regression (before) and with a regression (after).
 
 Before version:
+
 ```kotlin
 @Composable
 private fun MyApp() {
@@ -67,7 +65,7 @@ private fun MyApp() {
         Text("INCREMENT")
     }
 
-    AnotherComposable(count) 
+    AnotherComposable(count)
     SomeOtherComposable(count)
 }
 
@@ -85,13 +83,14 @@ fun SomeOtherComposable(count: Int) {
 ```
 
 After version:
+
 ```kotlin
 @Composable
 private fun MyApp() {
-    var count by remember { mutableIntStateOf(0) } 
-    Text("Count is $count", fontSize = 20.sp) 
+    var count by remember { mutableIntStateOf(0) }
+    Text("Count is $count", fontSize = 20.sp)
     runBlocking { delay(1000) } // introducing new regression of 1 second 🔴
-    Button(onClick = { count++ }) { 
+    Button(onClick = { count++ }) {
         Text("INCREMENT")
     }
 
@@ -100,17 +99,17 @@ private fun MyApp() {
 }
 ```
 
-Please keep in mind that our target here is NOT to find the bad code, but to find the regression (the *new* bad code).
+Please keep in mind that our target here is NOT to find the bad code, but to find the regression (the _new_ bad code).
 
 ## 🔎 Tracing
 
-Setting up a Compose tracing framework and teaching you how to generate a trace file is out of the scope of this blog. The official guides are pretty good and straightforward.  You can follow [this](https://developer.android.com/develop/ui/compose/tooling/tracing) guide to setup tracing and [this](https://developer.android.com/topic/performance/tracing) to generate trace files.
+Setting up a Compose tracing framework and teaching you how to generate a trace file is out of the scope of this blog. The official guides are pretty good and straightforward. You can follow [this](https://developer.android.com/develop/ui/compose/tooling/tracing) guide to setup tracing and [this](https://developer.android.com/topic/performance/tracing) to generate trace files.
 
 While the above guide covers the basics of tracing, I'd like to mention a few things that are very important when doing Compose tracing.
 
 1. Do not trace the `debug` build. Create a new `benchmark` variant that extends your release build configuration but without any ProGuard obfuscation. The reason is that Jetpack Compose includes many heavy features in debug builds for the IDE tools, also the compiler performs many optimizations on the release build. If you profile the `debug` build, you may end up fixing issues that are not actual user-facing problems, and you may overlook the actual problem. You can find more information on setting up a benchmarking variant [here](https://developer.android.com/topic/performance/appstartup/setup-env).
 
-2. There are many ways you can generate trace files. You can [use your IDE](https://developer.android.com/studio/profile), [terminal](https://developer.android.com/topic/performance/tracing/command-line), and most latest Android device also supports [in-device tracing](https://developer.android.com/topic/performance/tracing/on-device). You can also use the [Macrobenchmark](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview) framework to generate the trace files for you. IMO, The most simplest way is to use the IDE, but there's even a cooler way which I personally like the most, ie `record_android_trace` [command](https://perfetto.dev/docs/quickstart/android-tracing). This command records the traces and opens it auotmatically in perfetto with just one click. This is a huge time saver. 
+2. There are many ways you can generate trace files. You can [use your IDE](https://developer.android.com/studio/profile), [terminal](https://developer.android.com/topic/performance/tracing/command-line), and most latest Android device also supports [in-device tracing](https://developer.android.com/topic/performance/tracing/on-device). You can also use the [Macrobenchmark](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview) framework to generate the trace files for you. IMO, The most simplest way is to use the IDE, but there's even a cooler way which I personally like the most, ie `record_android_trace` [command](https://perfetto.dev/docs/quickstart/android-tracing). This command records the traces and opens it auotmatically in perfetto with just one click. This is a huge time saver.
 
 3. Do not add tracing dependency using `implementation(...)` Use build variant-scoped `implementation` call. For example, use `"benchmarkImplementation"`. This is to prevent leaking the tracing dependency into your release build, which will increase the APK size.
 
@@ -121,7 +120,7 @@ While the above guide covers the basics of tracing, I'd like to mention a few th
 I've got the tracing setup done by following the above guides, and now we can move on to generating the trace files. I've followed the same steps given below in both the `before` (best version) and `after` (regressed version) apps for generating the trace file.
 
 1. Open the app
-2. Start tracing 
+2. Start tracing
 3. Click the Button
 4. Stop tracing
 
@@ -138,7 +137,7 @@ And as you can see, there's the regression we added.
 
 ![screenshot showing regressions](image-25.png)
 
-Now, you may be wondering, _"Why do we need another tool to find the regressed component? It's clearly visible in the screenshot itself 🤷🏼‍♂️"_ You're right! In this case, it's true. **But**, in a real-world app, there could be hundreds ,if not more, composables getting rendering at the same time, and it's really hard to get a visual like this and to see the regression right away. 
+Now, you may be wondering, _"Why do we need another tool to find the regressed component? It's clearly visible in the screenshot itself 🤷🏼‍♂️"_ You're right! In this case, it's true. **But**, in a real-world app, there could be hundreds ,if not more, composables getting rendering at the same time, and it's really hard to get a visual like this and to see the regression right away.
 
 ## ⚡ Diffetto
 
@@ -156,9 +155,10 @@ Once done, press the "Find Diff" button and the tool will generate a table like 
 
 ![diffetto output](image-26.png)
 
-As you may have now realized, Diffetto is nothing but a text processing tool. It converts the text you give into a table. But Diffetto is not just a text-to-table converter. It knows certain things about these trace data. Basically, it's aware of certain nodes and what each node means. This knowledge is then used for the filters you see in the top right. The filters are used to narrow down to the culprit and reduce noise that comes from the trace file. Let's look at some filters: 
+As you may have now realized, Diffetto is nothing but a text processing tool. It converts the text you give into a table. But Diffetto is not just a text-to-table converter. It knows certain things about these trace data. Basically, it's aware of certain nodes and what each node means. This knowledge is then used for the filters you see in the top right. The filters are used to narrow down to the culprit and reduce noise that comes from the trace file. Let's look at some filters:
 
 **Filters:**
+
 - `Hide framework calls` : To hide [certain](https://github.com/theapache64/diffetto/blob/b1f315ad32dd3e40a7954501cb505bfe5994c283/src/jsMain/kotlin/core/FrameworkCallsFilter.kt#L13-L32) Android framework calls that present in most traces. Eg: `androidx.compose.*`, `Choreographer#*`, etc
 
 ![screen record of hide framework calls filter switching](hide-framework-calls.mov.gif)
@@ -185,12 +185,12 @@ fun AnotherComposable(count: Int) {
         anotherState = 0
         delay(2000) // wait for parent runBlocking to settle down
         while (anotherState < 10) {
-            anotherState++ // increments it every 100ms until it reach 10; 
+            anotherState++ // increments it every 100ms until it reach 10;
             delay(100)
         }
     }
 
-    Text("Hello from AnotherComposable -> $count $anotherState") 
+    Text("Hello from AnotherComposable -> $count $anotherState")
     runBlocking { delay(200) }
 }
 ```
@@ -203,9 +203,9 @@ As you can see, the additional 10 recompositions we added for `AnotherComposable
 
 ## ✍🏼 Concluding...
 
-I must say, while Diffetto is a tiny app, the power of Diffetto is not really visible in this sample app. 
+I must say, while Diffetto is a tiny app, the power of Diffetto is not really visible in this sample app.
 
-To give you some context, the app I work on, is a fully Compose app. In the early days of Compose, where we didn't have enough support around Macrobenchmarking, finding performance regression was tough with more than 200 of composable getting rendered in a second. In such an environment, the trace becomes too noisy. There, Diffetto played a crucial role in reducing the noise and in turn help find the culprits faster. If you've similar situation, where you basically have two version of the app and don't know what regressed, I'd suggest try this approach on that. "Diffetto" can also be used in non-compose apps, by the way.  
+To give you some context, the app I work on, is a fully Compose app. In the early days of Compose, where we didn't have enough support around Macrobenchmarking, finding performance regression was tough with more than 200 of composable getting rendered in a second. In such an environment, the trace becomes too noisy. There, Diffetto played a crucial role in reducing the noise and in turn help find the culprits faster. If you've similar situation, where you basically have two version of the app and don't know what regressed, I'd suggest try this approach on that. "Diffetto" can also be used in non-compose apps, by the way.
 
 ## 🤝 Thank you
 

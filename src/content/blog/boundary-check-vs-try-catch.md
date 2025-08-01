@@ -3,14 +3,12 @@ author: theapache64
 pubDatetime: 2024-12-07T15:00:00+00:00
 modDatetime: 2024-12-07T15:00:00+00:00
 title: Boundary Check vs Try-Catch
-slug: 
-    boundary-check-vs-try-catch
+slug: boundary-check-vs-try-catch
 featured: true
 draft: false
-description: 
-    Performance comparison between boundary checking vs try catch
+description: Performance comparison between boundary checking vs try catch
 tags:
-    - performance
+  - performance
 ---
 
 ![boundary-check-vs-try-catch-meme](image-43.png)
@@ -20,6 +18,7 @@ During the [day 4](https://adventofcode.com/2024/day/4) advent of code 2024, I n
 ## 👨🏼‍💻 Code
 
 **Full Code: Boundary Check**
+
 ```kotlin
 enum class Direction(
     val rowVal: Int,
@@ -235,7 +234,6 @@ DayBenchmark.solution  thrpt    5  542.348 ± 6.945  ops/s
 putting this in a chart, it looks like this
 
 ![line-chart-showing-above-diff](image-44.png)
-
 
 ## ✍🏼 Conclusion
 

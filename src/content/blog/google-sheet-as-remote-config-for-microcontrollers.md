@@ -3,14 +3,12 @@ author: theapache64
 pubDatetime: 2024-11-24T21:17:45+00:00
 modDatetime: 2024-11-24T21:17:45+00:00
 title: Google Sheet as Remote Config for Microcontrollers
-slug: 
-    google-sheet-as-remote-config-for-microcontrollers
+slug: google-sheet-as-remote-config-for-microcontrollers
 featured: true
 draft: false
-description: 
-    How I used Google sheet as a remote config source for microcontrollers
+description: How I used Google sheet as a remote config source for microcontrollers
 tags:
-    - microcontrollers
+  - microcontrollers
 ---
 
 ## 📖 Context
@@ -19,22 +17,21 @@ Recently, I started playing with microcontrollers (MCUs) for the first time in m
 
 ![alt text](image-39.png)
 
+Source:
 
-
-Source: 
 - https://x.com/theapache64/status/1776345276984283199
 - https://x.com/theapache64/status/1768999825658335299
 - https://x.com/theapache64/status/1768966949533278276
 
 ## 🥲 Problem Statement
 
-Alright. Let's talk about the problem. 
+Alright. Let's talk about the problem.
 
-The microcontroller I am mainly using is the `ESP8266`/`ESP32` and it takes around 20-25 seconds to "upload" the code to the MCU. While it's better than the Android build time at work (😜), any variable change taking 20-25 seconds feels kinda off. Plus, while reading more about it, I found that these microcontrollers have a limit on how many times I can "upload" the code (write/erase cycle). The limit is between 10,000 to 100,000 write/erase cycles, but the exact number can vary based on environmental factors such as temperature and how frequently I write (source: perplexity.ai - CMIIW). 
+The microcontroller I am mainly using is the `ESP8266`/`ESP32` and it takes around 20-25 seconds to "upload" the code to the MCU. While it's better than the Android build time at work (😜), any variable change taking 20-25 seconds feels kinda off. Plus, while reading more about it, I found that these microcontrollers have a limit on how many times I can "upload" the code (write/erase cycle). The limit is between 10,000 to 100,000 write/erase cycles, but the exact number can vary based on environmental factors such as temperature and how frequently I write (source: perplexity.ai - CMIIW).
 
 ![alt text](image-32.png)
 
-Since I am new to the world of microcontrollers, most of my "uploads" (flashes) for tweaking variable values out of curiosity about what would happen or to match certain behaviors. For example, I'd experiment with different servo angles, water pumping durations, loop delays, etc 
+Since I am new to the world of microcontrollers, most of my "uploads" (flashes) for tweaking variable values out of curiosity about what would happen or to match certain behaviors. For example, I'd experiment with different servo angles, water pumping durations, loop delays, etc
 
 ## 💡 !dea
 
@@ -43,7 +40,6 @@ Since I am new to the world of microcontrollers, most of my "uploads" (flashes) 
 Since each upload takes 20-25 seconds and it wears out the device, I decided to write a remote config that can fetch values from somewhere on the internet.
 
 I chose Google Sheets for this purpose, mainly because I don't have to maintain a server, pay any subscription fees, build any UI, and I can take full advantage of the features of Google Sheets (yeah am lazy bro :/). So here's what I did
-
 
 ## 🦶🏼 Step 1 : Create Sheet
 
@@ -55,7 +51,7 @@ Please note, your value field can't have two data types. To solve this, always w
 
 ## 🦶🏼🦶🏼 Step 2: Write config class
 
-Then I wrote a `Config` class that uses Google Sheet's "auth free CSV endpoint" to download the values as key-value pairs. 
+Then I wrote a `Config` class that uses Google Sheet's "auth free CSV endpoint" to download the values as key-value pairs.
 The only requirement is that your sheet has to be publicly readable.
 
 ```c++
@@ -68,7 +64,7 @@ class Config {
    private:
     std::map<String, String> configCache;
     const String sheetId = "1OzhdDoPW-slnVct42AsFLe2zNJJrFReHDz5Gv6hccsA"; // you can get this ID from your share url
-    const String sheetName = "config"; // this is sheet's name 
+    const String sheetName = "config"; // this is sheet's name
 
    public:
     /**
@@ -134,7 +130,7 @@ class Config {
         }
         request.end();
         Serial.println("Config load finished");
-        
+
     }
 
     /**
@@ -175,7 +171,7 @@ WiFiConnection wifi;
 Config config;
 
 void setup() {
-  Serial.begin(115200); 
+  Serial.begin(115200);
   wifi.connectToWifi();
   config.loadConfig();
 }
@@ -197,26 +193,25 @@ void loop() {
     }
     ...
   }
-  
+
   ...
 
   if(millis() - lastHeartbeatSentAt > config.getConfig("heartbeat_interval_in_sec", "60").toInt() * 1000.0) {
     ...
     config.refreshConfigs();
   }
-  
+
   delay(config.getConfig("main_delay_in_ms", "1000").toInt());
 }
 ```
 
 Please note: this is a real-world example with unrelated code redacted for the sake of clarity. You can find the full code [here](https://github.com/theapache64/harbor/blob/master/src/main.cpp)
 
-
 ## 📜 Source Code
 
 If you want to reuse this approach in your projects, you can simply copy and paste the above `Config` class and use it by changing the `sheetId` and `sheetName`. Here's the [full code](https://github.com/theapache64/harbor/blob/master/src/Config.cpp)
 
-If you want to use the same method for your Android or JVM apps, you can use my library called [fig](https://github.com/theapache64/fig). It uses the same principle ;) 
+If you want to use the same method for your Android or JVM apps, you can use my library called [fig](https://github.com/theapache64/fig). It uses the same principle ;)
 
 ## 🤝 Thanks
 

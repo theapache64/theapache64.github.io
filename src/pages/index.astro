@@ -18,21 +18,27 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-    <head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- Google tag (gtag.js) -->
-      <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-RVMGGB9DLQ"></script>
-      <script type="text/partytown">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);} // eslint-disable-line no-undef
-        gtag('js', new Date());
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RVMGGB9DLQ"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      } // eslint-disable-line no-undef
+      gtag("js", new Date());
 
-        gtag('config', 'G-RVMGGB9DLQ');
-      </script>
+      gtag("config", "G-RVMGGB9DLQ");
+    </script>
   </head>
-</html> 
+</html>
 
 <Layout>
   <Header />
@@ -57,10 +63,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        Hi fellow developer, welcome to my blog. 
-        Here you can find my thoughts, ideas, and code snippets. Enjoy your stay!
+        Hi fellow developer, welcome to my blog. Here you can find my thoughts,
+        ideas, and code snippets. Enjoy your stay!
       </p>
-      
+
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (

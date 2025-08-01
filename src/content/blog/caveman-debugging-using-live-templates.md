@@ -3,23 +3,21 @@ author: theapache64
 pubDatetime: 2024-10-08T00:00:00+05:30
 modDatetime: 2024-10-08T00:00:00+05:30
 title: Caveman Debugging in the Modern Age
-slug: 
-    caveman-debugging-using-live-templates
+slug: caveman-debugging-using-live-templates
 featured: false
 draft: false
-description: 
-    How to use live-templates in caveman debugging, aka. printf debugging
+description: How to use live-templates in caveman debugging, aka. printf debugging
 tags:
-    - debugging
-    - intellij
-    - productivity
+  - debugging
+  - intellij
+  - productivity
 ---
 
 ![caveman debuggin](caveman.png)
 
 > The most effective debugging tool is still careful thought, coupled with judiciously placed print statements
 
- — Brian Kernighan , "Unix for Beginners" (1979)
+— Brian Kernighan , "Unix for Beginners" (1979)
 
 ## 📗 Context
 
@@ -31,8 +29,7 @@ Caveman debugging, also known as "printf debugging" is a simple and primitive me
 
 Live Template is an IntelliJ IDEA feature that offers predefined code snippets allowing you to quickly insert commonly used code patterns or structures. These templates can also access the context they get called in. You can learn more about it [here](https://www.jetbrains.com/help/idea/creating-and-editing-live-templates.html)
 
-
-## 🔀 Combining Both 
+## 🔀 Combining Both
 
 By combining caveman debugging and live templates, you can create a highly productive workflow. Here are my two most used custom live templates that I use almost everyday. It may look simple and trivial, but it helps a lot! (trust me!)
 
@@ -52,7 +49,6 @@ println("QuickTag: $className$:$functionName$: $END$")
 
 **After - 5s**
 ![](after.mov.gif)
-
 
 ### ⌛ Printing execution time
 
@@ -74,7 +70,7 @@ println("QuickTag: $className$:$functionName$ :$cursor$: took ${java.lang.System
 **After - 26s**
 ![](time-calc-after.mov.gif)
 
-> The "QuickTag" text is then used to filter this in the logging window. 
+> The "QuickTag" text is then used to filter this in the logging window.
 
 ## 🤷‍♂️ That's it?
 

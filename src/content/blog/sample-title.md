@@ -5,8 +5,7 @@ title: "Mastering Digital Discipline : How am Overcoming Digital Distractions"
 slug: sample-title
 featured: false
 draft: true
-description:
-  sample desc
+description: sample desc
 tags:
   - productivity
 ---
@@ -24,25 +23,22 @@ The first week I decided to make myself as bait to the rabitholes. I installed a
 
 ## Problems and Solutions
 
-
 ### Problem: Randomly Visiting Social Media Websites During Work Hours
+
 Solution:
 To curb the impulse of visiting social media sites during work, I created a custom Chrome script that automatically redirects me to my JIRA board whenever I try to access these sites. It’s a simple yet effective reminder to stay on task.
 
 - problems
   - randomly visiting social media websites during work hours
     - solution: custom chrome script to redirect to JIRA
-  - ultimate usage of youtube 
+  - ultimate usage of youtube
     - Android
       - uninstalled YouTube
       - installed YouTube rabbit hole
     - Web
       - YouTube rabbit hole extension
-  - ultimate usage of Android device
-        - Made phone black and white - less attractive
-        - installed minimalist launcher
-        - Disabled notifications from all IMs
-  - easily falling into news websites and read useless news 
+  - ultimate usage of Android device - Made phone black and white - less attractive - installed minimalist launcher - Disabled notifications from all IMs
+  - easily falling into news websites and read useless news
     - Unistalled Chrome
     - created bucker
     - Created tlog

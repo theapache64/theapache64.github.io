@@ -88,8 +88,9 @@ Eventually, I built five “fireflies” - one on a breadboard for tinkering and
 
 The night I saw their gentle blinks line up in the dark, it was pure, peculiar joy. (ohh man!)
 
-![fire](firefly-outdoor.gif)
-![demo-2](firefly-demo-2.gif)
+![outdoor demo](20250801_003035_1_1.mp4.gif)
+![indoor demo](firefly-demo-2.gif)
+
 
 I took a pause and looked back… “What am I doing? Why am I so happy and excited?”
 The last time I felt this deeply immersed was when I was learning my first programming language, PHP, 7 or 8 years ago. Now, I realized, I was once again fully absorbed—learning something entirely new, stumbling and getting back up every time I failed. That's what truly gave me a sense of purpose and excitement.

@@ -198,3 +198,13 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
   - Building missing shortcuts as plugins and publish for others
 
 > Tip 27: Achieve Editor Fluency
+
+- **Version Control**
+  - Its more than a "giant undo key"
+  - Use version control for everything (including non code stuff)
+  - Try backup your laptop using version control (so that you can easily recover)
+  - Branching helps create isolated islands for you and your teammates to work without conflicting each others change
+
+> Tip 28: Always Use Version Control
+
+- 

@@ -99,7 +99,7 @@ I’m already eager to build even better “fireflies,” blinking smarter, shin
 
 To be continued...
 
-**EDIT:**
+**EDIT :**
 
 I've got a few requests asking how others can build the firefly.
 To build this, you need the following electronic components:

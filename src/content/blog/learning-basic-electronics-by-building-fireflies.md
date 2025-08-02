@@ -101,7 +101,7 @@ To be continued...
 
 **EDIT:**
 
-I've got a few requests asking how others can build the firefly. 
+I've got a few requests asking how others can build the firefly.
 To build this, you need the following electronic components:
 
 - 1 NPN transistor (e.g., 2N3904)

@@ -9,7 +9,7 @@ on:
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
-  contents: read
+  contents: write  # Changed from 'read' to 'write' to allow CI to commit formatting changes
   pages: write
   id-token: write
 
@@ -19,6 +19,8 @@ jobs:
     # Skip CI if the commit message contains [skip ci]
     if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: write  # Explicitly pass write permission to CI workflow
 
   build:
     needs: ci

@@ -1,7 +1,7 @@
 ---
 author: theapache64
 pubDatetime: 2025-07-28T00:00:00+00:00
-modDatetime: 2025-07-28T00:00:00+00:00
+modDatetime: 2025-08-02T00:00:00+00:00
 title: Learning Basic Electronics By Building FireFlies
 slug: learning-basic-electronics-by-building-fireflies
 featured: true
@@ -98,3 +98,21 @@ The last time I felt this deeply immersed was when I was learning my first progr
 I’m already eager to build even better “fireflies,” blinking smarter, shining longer. I don’t know exactly where this all leads, but I know now: the thrill is in the making, the learning and the falling.
 
 To be continued...
+
+**EDIT:**
+
+I've got a few requests asking how others can build the firefly. 
+To build this, you need the following electronic components:
+
+- 1 NPN transistor (e.g., 2N3904)
+- 1 PNP transistor (e.g., 2N3906)
+- 2 × 1 kΩ resistors
+- 1 × 22 Ω resistor
+- 1 × 1.5 MΩ resistor
+- 1 × 10 nF capacitor
+- 1 × 10 µF capacitor
+- 1 × 1000 µF capacitor (polarized)
+- 1 × LED (any color/size)
+- 1.5V battery (AA)
+
+circuit diagram provided above, not in best shape (still learning how to draw circuit diagrams 😬)

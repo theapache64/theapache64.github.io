@@ -16,14 +16,21 @@ permissions:
 jobs:
   # Run CI checks first
   ci:
+    # Skip CI if the commit message contains [skip ci]
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     uses: ./.github/workflows/ci.yml
 
   build:
     needs: ci
+    # Always run build step, even if CI was skipped
+    if: always() && (needs.ci.result == 'success' || needs.ci.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+        with:
+          # Fetch the latest changes in case CI pushed formatting changes
+          ref: master
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:

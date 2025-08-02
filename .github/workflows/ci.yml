@@ -9,6 +9,10 @@ on:
       - reopened
   workflow_call:
 
+# Allow the workflow to write back to the repository
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Code standards & build
@@ -35,8 +39,18 @@ jobs:
       - name: "🔎 Lint code"
         run: npm run lint
 
-      - name: "📝 Checking code format"
-        run: npm run format:check
+      - name: "📝 Auto-format code"
+        run: npm run format
+
+      - name: "🔧 Commit formatting changes"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-format code [skip ci]"
+            git push
+          fi
 
       - name: "🚀 Build the project"
         run: npm run build

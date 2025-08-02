@@ -163,9 +163,38 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
   - Use a language that's known to both the engineers and the domain experts
   - Use domain specific abstractions to make the code more readable to domain experts
 
+> Tip 22: Program Close to the Problem Domain
+
 - **Estimating**
   - Estimation is difficult and can't be accurate and constant
   - The easiest way to find an estimate is to ask the person who have already done it
   - Before giving an estimate, make sure you scope each part or phase of the project
   - Provide range rather than an accurate date, iterate on the date as you move
   - When estimate goes wrong, do a retro and learn! (this is a must)
+
+> Tip 23: Estimate to avoid surprises
+> Tip 24: Iterate the Schedule with the Code
+
+## Day 12 : Chapter 3 - The Basic Tools (August 3)
+
+- **The Power of Plain Text**
+  - Plain text is understandable text to humans. That includes formats like HTML, JSON, YAML etc
+  - Plain text will outlive all other formats
+   - Consider how Unix is designed where most of the tools are simple, small, and sharp tools made for plain text. Eg: `grep` which can be used in conjunction with any other CLI tool
+
+> Tip 25: Keep Knowledge in Plain Text
+
+- **Shell Games**
+  - Using a GUI for everything is not ideal, as certain tasks can't be automated or moded and will remain manual forever
+  - Gain famility with the shell (use tools like `grep, sed, sort etc`)
+  - Setup aliases and shell functions
+
+> Tip 26: Use the Power of Command Shells
+
+- **Power Editing**
+  - Learn to use keyboard for all kind of text manipulation and code manipulation
+  - Learn to navigate to code blocks using keyboard shortcuts
+  - Try ditch the mouse and do everything using keyboard, especially in the IDE.
+  - Building missing shortcuts as plugins and publish for others
+
+> Tip 27: Achieve Editor Fluency

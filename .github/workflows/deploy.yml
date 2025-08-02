@@ -1,42 +1,32 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `master` branch
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [master]
+    branches: [ main ]
+    branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
-  contents: write  # Changed from 'read' to 'write' to allow CI to commit formatting changes
+  contents: read
   pages: write
   id-token: write
 
 jobs:
-  # Run CI checks first
-  ci:
-    # Skip CI if the commit message contains [skip ci]
-    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
-    uses: ./.github/workflows/ci.yml
-    permissions:
-      contents: write  # Explicitly pass write permission to CI workflow
-
   build:
-    needs: ci
-    # Always run build step, even if CI was skipped
-    if: always() && (needs.ci.result == 'success' || needs.ci.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-        with:
-          # Fetch the latest changes in case CI pushed formatting changes
-          ref: master
       - name: Install, build, and upload your site
         uses: withastro/action@v2
-        with:
-          node-version: 18
+          # with:
+          # path: . # The root location of your Astro project inside the repository. (optional)
+          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
+        # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
   deploy:
     needs: build

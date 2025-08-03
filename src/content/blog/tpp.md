@@ -207,6 +207,8 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 > Tip 28: Always Use Version Control
 
+## Day 12 (August 4)
+
 - **Debugging**
   - No software is free of bugs. So debugging takes major portion of your day
   - Sensitive emotional subject; Often you'd encouter denial, finger pointing, etc

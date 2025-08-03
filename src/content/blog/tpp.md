@@ -207,4 +207,29 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 
 > Tip 28: Always Use Version Control
 
-- 
+- **Debugging**
+  - No software is free of bugs. So debugging takes major portion of your day
+  - Sensitive emotional subject; Often you'd encouter denial, finger pointing, etc
+  - Stop blaming. Start fixing.
+  - Debugging mindset = turn off all your defenses that protects your ego and get ready to get surprised
+  - Look at the symptoms and figure out the root cause. Don't fix symptomps. Fix root cause.
+  - Starting point: Buildable code
+  - Then Reproduce the bug with single command with the help of automated test, and not manually
+  - Learn to use the IDE debugger and callstack analysis
+  - Use BINARY CHOP! (Simple, Clever and Important!) (aka. divide and conquer). Maybe automate it too ?
+  - Do caveman debugging to log previous states of the program. Use regular format as well (like your `QuickTag`) for eaiser filtering.
+  - Rubber Ducking : Explain the bug to a dumb duck to listen to yourself while doing that. More likely you'll figure out the issue or get new insight when you do that.
+  - Always suspect the application code and not the OS, 3P framework or any other external factor. 
+  - Retro: 
+    - Why didn't caught earlier? need unit test update
+    - Bad data? Add better parameter checking
+    - Any other places? Fix them
+    - Took long time to fix the bug? Make a log file analyzer tool maybe? 
+  
+> Tip 29: Fix the Problem, Not the Blame
+> Tip 30: Don't Panic
+> Tip 31: Failing Test Before Fixing Code
+> Tip 32: Read the Damn Error Message
+> Tip 33: "select" Isn't Broken
+> Tip 34: Don't Assume It - Prove It
+

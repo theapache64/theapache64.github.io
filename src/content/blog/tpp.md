@@ -235,3 +235,14 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
 > Tip 33: "select" Isn't Broken
 > Tip 34: Don't Assume It - Prove It
 
+## Day 13 (August 5)
+
+- **Text Manipulation**
+  - Tools like `sed` and `awk` can help implement text manipulation task way faster (than writing with a programming language)
+  - Its difficult master, but going to be incredibly useful
+
+- **Engineering Daybook**
+  - Keep a tiny notebook and a pen with you at all times.
+  - Note down things ideas and scribbles
+  - When we start to write something, the brain switches the gear to a "rubber duck" mode
+  - When a book is finished, save this one and get a new one, and continue

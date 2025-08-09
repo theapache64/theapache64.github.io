@@ -246,3 +246,10 @@ I’m starting a reading log for `The Pragmatic Programmer`. It has 53 topics, a
   - Note down things ideas and scribbles
   - When we start to write something, the brain switches the gear to a "rubber duck" mode
   - When a book is finished, save this one and get a new one, and continue
+
+## Day 14 (August 6) : Chapter 4 : Pragmatic Paranoia
+
+- **Intro**
+  - 
+
+

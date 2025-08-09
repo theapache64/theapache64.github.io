@@ -12,8 +12,6 @@ tags:
   - bitwise
 ---
 
-## Detecting Powers of Two in Kotlin ⚡
-
 In Kotlin, there’s a neat bit trick to check if a number is a power of two:  
 
 ```kotlin

@@ -4,7 +4,7 @@ pubDatetime: 2025-05-12T00:09:20+05:30
 modDatetime: 2025-05-11T00:09:20+05:30
 title: Why and How I am building a smarter TODO app.
 slug: todx
-featured: true
+featured: false
 draft: false
 description: Solving a personal itch by creating a non-boring TODO app.
 tags:

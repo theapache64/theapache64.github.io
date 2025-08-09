@@ -4,7 +4,7 @@ pubDatetime: 2024-10-26T00:00:00+05:30
 modDatetime: 2024-10-26T00:00:00+05:30
 title: Compose Performance - Finding Regressions
 slug: finding-performance-regressions
-featured: true
+featured: false
 draft: false
 description: How to find performance regressions in your Jetpack Compose code using Perfetto and Diffetto
 tags:

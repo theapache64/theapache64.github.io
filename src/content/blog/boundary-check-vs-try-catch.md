@@ -4,7 +4,7 @@ pubDatetime: 2024-12-07T15:00:00+00:00
 modDatetime: 2024-12-07T15:00:00+00:00
 title: Boundary Check vs Try-Catch
 slug: boundary-check-vs-try-catch
-featured: true
+featured: false
 draft: false
 description: Performance comparison between boundary checking vs try catch
 tags:

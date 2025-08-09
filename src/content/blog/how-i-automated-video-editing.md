@@ -4,7 +4,7 @@ pubDatetime: 2020-03-12T00:00:00+05:30
 modDatetime: 2024-08-12T00:00:00+05:30
 title: How I Automated Video Editing Using FFmpeg
 slug: how-i-automated-video-editing
-featured: true
+featured: false
 draft: false
 description: Frustrated by the time-consuming process of video editing, I decided to automate the task using programming and tools like FFmpeg.
 tags:

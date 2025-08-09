@@ -4,7 +4,7 @@ pubDatetime: 2024-09-24T00:00:00+05:30
 modDatetime: 2024-09-24T00:00:00+05:30
 title: Why fullMode hates Gson so much?
 slug: why-fullMode-hates-gson-so-much
-featured: true
+featured: false
 draft: false
 description: When fullMode is enabled, some of the Gson usage crash the app. This is an investigation into how and why it happens.
 tags:

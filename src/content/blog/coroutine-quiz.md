@@ -106,7 +106,7 @@ suspend fun myFun(x: Int): Int = coroutineScope {
 
 **Explanation:**
 
-The `async` coroutine holds any exception occured within it and rethrown only when you call `.await()` or `.awaitAll()`. The attached `CoroutineExceptionHandler` won't be triggered because the exception is already "caught" (and held) by the `async` block.
+The `async` coroutines hold any exception occured within it and rethrown only when you call `.await()` or `.awaitAll()`. The attached `CoroutineExceptionHandler` won't be triggered because the exception is already "caught" (and held) by the `async` block. In this case, since it'll be rethrown outside `handler` scope, this will then propogate back and kill the process.  
 
 </details>
 ---

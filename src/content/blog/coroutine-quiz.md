@@ -64,5 +64,50 @@ The key here is understanding how `coroutineScope` works with `launch`. The `cor
 
 </details>
 
+## Q2
+
+What will be the output of this code
+
+```kotlin
+fun main(args: Array<String>) {
+    runBlocking {
+        repeat(4) { x ->
+            println("${myFun(x)}")
+        }
+        println("done")
+    }
+}
+
+suspend fun myFun(x: Int): Int = coroutineScope {
+    val handler = CoroutineExceptionHandler { context, throwable ->
+        println("caught")
+    }
+    return@coroutineScope async(handler + SupervisorJob()) {
+        if (x == 2) {
+            throw IOException("bhoom!")
+        }
+        x
+    }.await()
+}
+```
+
+### Choices
+
+- 0, 1, caught, 3, done
+- 0, 1, process die with `IOException`
+- 0, 1, caught, done
+
+### Answer
+
+<details>
+<summary>Click to reveal the answer</summary>
+
+**Answer: `0, 1, process die with IOException`**
+
+**Explanation:**
+
+The `async` coroutine holds any exception occured within it and rethrown only when you call `.await()` or `.awaitAll()`. The attached `CoroutineExceptionHandler` won't be triggered because the exception is already "caught" (and held) by the `async` block.
+
+</details>
 ---
 

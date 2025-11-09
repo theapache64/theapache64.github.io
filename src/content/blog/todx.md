@@ -39,6 +39,12 @@ it can automatically fill break slots using techniques like pomodoro to keep you
 
 ![](todx_todos.png)
 
+### Zen Mode
+
+zen mode automatically fixes your vague/chaotic or overwhelming burnout plan.
+
+![zen mode sample](image-58.png)
+
 ### Built-in alerts and timers
 
 the android app sends notifications and timers.  

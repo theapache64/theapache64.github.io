@@ -11,11 +11,11 @@ description: Revisiting Jetpack Compose performance patterns and assumptions in 
   - jetpack-compose
 ---
 
-Back in 2023, I spent a considerable amount of time diving deep into Jetpack Compose performance. I built a decent understanding of how Compose works under the hood. Concepts like recomposition, compiler metrics, what makes a data model unstable, and why certain composable functions skip recomposition while others don't. These were things I actively tracked and optimized for (because we had a ton of performance issues back then).
+Back in 2023, I spent a considerable amount of time diving deep into Jetpack Compose performance. I built a decent understanding of how Compose works under the hood, mainly concepts like recomposition, compiler metrics, what makes a data model unstable, and why certain composable functions skip recomposition while others don't, tools available to debug recomposition etc. These were things I actively tracked and optimized for (because we had a ton of performance issues back then).
 
-Fast forward to today, and it's been nearly 2 years since that deep dive. The framework has evolved, and I found myself wondering: Are those techniques and mental models still valid? Has Compose gotten smarter about handling performance on its own? Are there new tools I should be aware of?
+Fast forward to today, and it's been nearly 2 years since that deep dive. The framework has evolved, and i found myself wondering: Are those techniques and mental models still valid? Has Compose gotten smarter about handling performance on its own? Are there new tools I should be aware of?
 
-This blog post is essentially my attempt to answer those questions. Think of it less as a comprehensive guide and more as a personal revalidation exercise - double-checking assumptions, exploring what's changed in the landscape, and documenting findings along the way.
+This blog post is essentially my attempt to answer those questions. Think of it less as a comprehensive guide and more as a personal revalidation exercise.
 
 If you're someone who learned Compose performance patterns a few years ago and hasn't revisited them since, this might be a useful checkpoint for you too.
 
@@ -97,7 +97,7 @@ Most composables are both, but Strong Skipping makes almost all restartable func
 
 **Q: Doesn't checking `equals()` on a large list hurt performance?**
 
-**A:** It costs CPU time (math), but it saves UI time (layout and drawing). Generally, verifying that two lists are equal (O(N)) is significantly cheaper than recreating the entire UI tree for that list. However, for massive lists (10k+ items), you should avoid standard `equals()` and use a wrapper with a unique version ID for O(1) comparison.
+**A:** It costs CPU time (math), but it saves UI time (layout and drawing). Generally, verifying that two lists are equal (O(N)) is significantly cheaper than recreating the entire UI tree for that list. However, for massive lists , you should avoid standard `equals()` and use a wrapper with a unique version ID for O(1) comparison.
 
 ```kotlin
 @Immutable

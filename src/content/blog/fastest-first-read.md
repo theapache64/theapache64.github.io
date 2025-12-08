@@ -5,7 +5,7 @@ modDatetime: 2025-10-20T00:23:25+05:30
 title: Fastest Way To Read A Boolean From Disk
 slug: fastest-first-read
 featured: false
-draft: false
+draft: true
 description: One day, while debugging a weird crash in Compose ConstraintLayout...
 tags:
   - compose

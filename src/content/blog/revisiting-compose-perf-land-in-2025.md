@@ -115,7 +115,7 @@ data class HugeData(
 # Conclusion
 
 The landscape of Compose performance in 2025 is much better than it was in 2023. 
-The introduction of Strong Skipping in Kotlin 2.0.x has effectively killed "Stability Worry". 
+The introduction of Strong Skipping in Kotlin 2.0.x has mostly killed "Stability Worry". 
 We no longer need to fear _every_ `List` or external class potentially ruining our skip logic. 
 
 going forward, this wil be my approach:

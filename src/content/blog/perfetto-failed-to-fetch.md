@@ -54,7 +54,7 @@ If you want this to enabled only when you are viewing Perfetto traces locally, y
 open -a "Arc" --args --disable-web-security --user-data-dir=~/chromeTemp
 ```
 
-This bypasses the CORS restrictions for that browser session. Not ideal for everyday browsing, but perfect for local trace viewing.
+This bypasses the CORS restrictions for that browser session. Not ideal for everyday browsing, but perfect when you want to disable these restrictions only when you're using `record_android_trace`.
 
 ## #3: Integrated Flag Fix
 

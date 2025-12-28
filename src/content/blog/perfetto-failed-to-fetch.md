@@ -35,9 +35,20 @@ Basically, the browser is now blocking requests from `https://ui.perfetto.dev` t
 It treats requests from public websites to local/private IP addresses as potentially dangerous and block them by default. (TIL)
 
 
-## The Quick Fix
+## #1: The Easy Fix
 
-Turns out you can launch Chromium-based browsers with relaxed web security for local development:
+Am not sure if other Chromium-based browsers support this, but in Arc, you can click on the site menu icon in the address bar and allow LAN access for the specific site.
+In this case, for `https://ui.perfetto.dev`.
+
+![arc-menu-to-enable-local-access](image-60.png)
+
+(In other chromium browsers, you might find similar options in the site settings -> `chrome://settings/content/siteDetails?site=https://ui.perfetto.dev/`)
+
+
+## #2: The Flag Fix
+
+
+If you want this to enabled only when you are viewing Perfetto traces locally, you can launch the browser from the terminal with these flags.
 
 ```bash
 open -a "Arc" --args --disable-web-security --user-data-dir=~/chromeTemp
@@ -45,20 +56,15 @@ open -a "Arc" --args --disable-web-security --user-data-dir=~/chromeTemp
 
 This bypasses the CORS restrictions for that browser session. Not ideal for everyday browsing, but perfect for local trace viewing.
 
-## The Better Fix: Modify the Script
+## #3: Integrated Flag Fix
 
-Rather than manually launching a special browser window every time, I modified the `record_android_trace` script to do it automatically.
+Rather than manually launching a special browser window every time, you can modify the `record_android_trace` script to do it automatically.
 
 **Before (original script):**
 
 ```python
 def open_trace_in_browser(path, open_browser, origin):
-  # We reuse the HTTP+RPC port because it's the only one allowed by the CSP.
-  PORT = 9001
-  path = os.path.abspath(path)
-  os.chdir(os.path.dirname(path))
-  fname = os.path.basename(path)
-  socketserver.TCPServer.allow_reuse_address = True
+  ...
   with socketserver.TCPServer(('127.0.0.1', PORT), HttpHandler) as httpd:
     address = f'{origin}/#!/?url=http://127.0.0.1:{PORT}/{fname}&referrer=record_android_trace'
     if open_browser:
@@ -66,23 +72,14 @@ def open_trace_in_browser(path, open_browser, origin):
     else:
       print(f'Open URL in browser: {address}')
 
-    httpd.expected_fname = fname
-    httpd.fname_get_completed = None
-    httpd.allow_origin = origin
-    while httpd.fname_get_completed is None:
-      httpd.handle_request()
+    ...
 ```
 
 **After (with the fix):**
 
 ```python
 def open_trace_in_browser(path, open_browser, origin):
-  # We reuse the HTTP+RPC port because it's the only one allowed by the CSP.
-  PORT = 9001
-  path = os.path.abspath(path)
-  os.chdir(os.path.dirname(path))
-  fname = os.path.basename(path)
-  socketserver.TCPServer.allow_reuse_address = True
+  ...
   with socketserver.TCPServer(('127.0.0.1', PORT), HttpHandler) as httpd:
     address = f'{origin}/#!/?url=http://127.0.0.1:{PORT}/{fname}&referrer=record_android_trace'
     subprocess.Popen([
@@ -91,32 +88,23 @@ def open_trace_in_browser(path, open_browser, origin):
         '--user-data-dir=' + os.path.expanduser('~/chromeTemp'),
     ])
 
-    httpd.expected_fname = fname
-    httpd.fname_get_completed = None
-    httpd.allow_origin = origin
-    while httpd.fname_get_completed is None:
-      httpd.handle_request()
+    ...
 ```
 
 The key change: instead of using Python's `webbrowser.open_new_tab()`, we use `subprocess.Popen()` to launch the browser directly with the `--disable-web-security` flag and a temporary user data directory.
 
 You can swap `'Arc'` with `'Google Chrome'` or whatever Chromium-based browser you use.
 
-## Full Modified Script
-
 I've put together the full modified script here: [gist.github.com/theapache64/38f074d0b1d4f3298aaa89f5cbb068da](https://gist.github.com/theapache64/38f074d0b1d4f3298aaa89f5cbb068da)
 
-## Alternate Approach
+## #4: Browser-wide Disable (Not Recommended)
 
 You can go to `chrome://flags/#local-network-access-check` and disable it browser-wide. 
 But I'd not recommend this as it reduces your browser's security for all sites.
 
 ## Final Thoughts
 
-I think Perfetto needs to implement a permission request for LAN access.
+I think Perfetto needs to implement a permission request for LAN access. This way users can grant access when prompted, similar to how location or camera permissions work.
 ![demo-lan-request](image-59.png)
-
-If you've a better fix, let me know.  
-For now, this workaround works.  
 
 Happy tracing! 🔍

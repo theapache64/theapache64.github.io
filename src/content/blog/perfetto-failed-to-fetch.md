@@ -1,7 +1,7 @@
 ---
 author: theapache64
-pubDatetime: 2025-12-28T08:30:00+00:00
-modDatetime: 2025-12-28T08:30:00+00:00
+pubDatetime: 2025-12-28T03:00:00+00:00
+modDatetime: 2025-12-28T03:00:00+00:00
 title: Fix for Perfetto's Failed to Fetch Error 
 slug: perfetto-failed-to-fetch
 featured: false

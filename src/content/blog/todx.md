@@ -72,4 +72,6 @@ i am still tuning the tool and fixing bugs to make it work seamlessly for me.
 
 ## Want to try it?
 
-you can go to https://todx.today and try it 🙌🏼
+~you can go to https://todx.today and try it 🙌🏼~
+
+today (20 april 2026), i've decided to take todx as a private tool. the reason is, i realised that making something for the public kinda puts limitations on personalising it for my own needs. if there's enough interest, i'll open source the source code. thanks 
